@@ -410,7 +410,7 @@ function winorloseboss(x, elem){
         document.getElementById(elem).classList.add("is-success");
         document.getElementById("sprite").src = "./img/robin_sprite2.png";
 
-        if(counterp == 2){
+        if(counterp == counterpmax){
 
             setTimeout(function(){
                 document.getElementById("back").classList.add("invisibile");
@@ -424,7 +424,6 @@ function winorloseboss(x, elem){
 
             setTimeout(function(){
                     
-                    document.getElementById("vic").classList.add("centro");
                     document.getElementById("vic").classList.remove("invisibile");
                     document.getElementById("vic").play();
                     //document.getElementById("vic").src = "./img/victoryc.gif";
@@ -432,7 +431,6 @@ function winorloseboss(x, elem){
                     setTimeout(function () {
                         document.getElementById("vic").pause();
                         document.getElementById("vic").classList.add("invisibile");
-                        document.getElementById("vic").classList.remove("centro");
         
                         document.getElementById("benvenuto").classList.remove("invisibile");
                         document.getElementById("allenatioboss").classList.remove("invisibile");
