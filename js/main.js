@@ -280,7 +280,27 @@ function winorloseboss(x, elem){
         }
 
     } else {
+
         document.getElementById(elem).classList.add("is-danger");
+        alert("Hai perso!");
+
+        document.getElementById("benvenuto").classList.remove("invisibile");
+        document.getElementById("allenatioboss").classList.remove("invisibile");
+            
+        document.getElementById("allenamenti").classList.add("invisibile");
+        document.getElementById("iboss").classList.add("invisibile");
+        document.getElementById("allenamentip").classList.add("invisibile");
+        document.getElementById("ibossp").classList.add("invisibile");
+        
+        document.getElementById("scenarioallenamento").classList.add("invisibile");
+        document.getElementById("spriteboss").classList.add("invisibile");
+        document.getElementById("sprite").classList.remove("invisibile");
+                
+        document.getElementById("sprite").src = "./img/robin_sprite.png";
+        document.getElementById("points").classList.add("invisibile");
+        document.getElementById("back").classList.add("invisibile");
+
+        return;
     }
     
     setTimeout(function () {
