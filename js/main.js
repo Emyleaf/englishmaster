@@ -410,7 +410,7 @@ function winorloseboss(x, elem){
         document.getElementById(elem).classList.add("is-success");
         document.getElementById("sprite").src = "./img/robin_sprite2.png";
 
-        if(counterp == 2){
+        if(counterp == counterpmax){
 
             setTimeout(function(){
                 document.getElementById("back").classList.add("invisibile");
