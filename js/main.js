@@ -248,6 +248,8 @@ function gioco(categoria, bossornot){
         document.getElementById("spritediv").classList.add("is-offset-2-desktop");
         document.getElementById("spritebossdiv").classList.add("is-half-mobile");
         document.getElementById("spritebossdiv").classList.add("is-4-desktop");
+        document.getElementById("points").classList.remove("invisibile");
+        document.getElementById("spritebossdiv").classList.remove("invisibile");
     }
 }
 
@@ -311,15 +313,12 @@ function giocoinloopboss(cat){
         document.getElementById("spriteboss").src = "./img/diodeltuono.png";
     }
 
-    document.getElementById("sprite").src = "./img/robin_sprite.png";
-    document.getElementById("spritebossdiv").classList.remove("invisibile");
-
     sce1.classList.remove("is-success");
     sce2.classList.remove("is-success");
     sce1.classList.remove("is-danger");
     sce2.classList.remove("is-danger");
-    document.getElementById("points").classList.remove("invisibile");
-
+    
+    document.getElementById("sprite").src = "./img/robin_sprite.png";
     document.getElementById("points").innerHTML = counterp + "/" + counterpmax;
 
     let n_categoria = Math.floor(Math.random() * numero_categorie);
@@ -381,8 +380,7 @@ function giocoinloopboss(cat){
     }
 }
 
-var audio = new Audio('./lvlupmod.mp3');
-audio.volume = 0.02;
+var audio = new Audio('./lvlupmodbasso.mp3');
 
 /*var audiovic = new Audio('./victory.mp3');
 audiovic.volume = 0.3;*/
@@ -412,51 +410,45 @@ function winorloseboss(x, elem){
         document.getElementById(elem).classList.add("is-success");
         document.getElementById("sprite").src = "./img/robin_sprite2.png";
 
-        setTimeout(function(){
-            if(counterp == counterpmax){
-                
-                document.getElementById("vic").classList.remove("invisibile");
-                document.getElementById("vic").play();
-                //document.getElementById("vic").src = "./img/victoryc.gif";
-                document.getElementById("scenarioallenamento").classList.add("invisibile");
-                document.getElementById("scenarioboss").classList.add("invisibile");
+        if(counterp == counterpmax){
+
+            setTimeout(function(){
                 document.getElementById("back").classList.add("invisibile");
                 document.getElementById("points").classList.add("invisibile");
+                document.getElementById("points").textContent = "";
+                document.getElementById("scenarioboss").classList.add("invisibile");
+                document.getElementById("scenarioallenamento").classList.add("invisibile");
+                document.getElementById("spritediv").classList.add("invisibile");
                 document.getElementById("spritebossdiv").classList.add("invisibile");
-                document.getElementById("sprite").classList.add("invisibile");
-                    
-                document.getElementById("spritediv").classList.remove("is-half-mobile");
-                document.getElementById("spritebossdiv").classList.remove("is-half-mobile");
-                    
-                document.getElementById("spritediv").classList.remove("is-4-desktop");
-                document.getElementById("spritediv").classList.remove("is-offset-2-desktop");
-                document.getElementById("spritebossdiv").classList.remove("is-4-desktop");
-    
-                setTimeout(function () {
-                    document.getElementById("vic").pause();
-                    document.getElementById("vic").classList.add("invisibile");
-    
-                    document.getElementById("benvenuto").classList.remove("invisibile");
-                    document.getElementById("allenatioboss").classList.remove("invisibile");
-                            
-                    document.getElementById("downloadbtn").classList.remove("invisibile");
-                        
-                    document.getElementById("allenamenti").classList.add("invisibile");
-                    document.getElementById("iboss").classList.add("invisibile");
-                    document.getElementById("allenamentip").classList.add("invisibile");
-                    document.getElementById("ibossp").classList.add("invisibile");
-                    
-                    document.getElementById("scenarioallenamento").classList.add("invisibile");
-                    document.getElementById("scenarioboss").classList.remove("invisibile");
-                            
-                    document.getElementById("sprite").src = "./img/robin_sprite.png";
-                    document.getElementById("sprite").classList.remove("invisibile");
-                    
-                }, 9000);
+            }, 1000);
 
-                return;
-            }
-        }, 1000);
+            setTimeout(function(){
+                    
+                    document.getElementById("vic").classList.remove("invisibile");
+                    document.getElementById("vic").play();
+                    //document.getElementById("vic").src = "./img/victoryc.gif";
+        
+                    setTimeout(function () {
+                        document.getElementById("vic").pause();
+                        document.getElementById("vic").classList.add("invisibile");
+        
+                        document.getElementById("benvenuto").classList.remove("invisibile");
+                        document.getElementById("allenatioboss").classList.remove("invisibile");
+                        document.getElementById("downloadbtn").classList.remove("invisibile");
+
+                        document.getElementById("scenarioboss").classList.remove("invisibile");
+                        document.getElementById("spritediv").classList.remove("is-half-mobile");
+                        document.getElementById("spritediv").classList.remove("invisibile");
+                        document.getElementById("spritediv").classList.remove("is-4-desktop");
+                        document.getElementById("spritediv").classList.remove("is-offset-2-desktop");
+                        document.getElementById("spritebossdiv").classList.remove("is-half-mobile");
+                        document.getElementById("spritebossdiv").classList.remove("is-4-desktop");
+                        document.getElementById("spritebossdiv").classList.add("invisibile");
+                        
+                    }, 10000);
+            }, 1000);
+        }
+
     } else {
 
         document.getElementById(elem).classList.add("is-danger");
@@ -468,25 +460,24 @@ function winorloseboss(x, elem){
         document.getElementById("downloadbtn").classList.remove("invisibile");
             
         document.getElementById("allenamenti").classList.add("invisibile");
-        document.getElementById("iboss").classList.add("invisibile");
         document.getElementById("allenamentip").classList.add("invisibile");
+        document.getElementById("iboss").classList.add("invisibile");
         document.getElementById("ibossp").classList.add("invisibile");
         
         document.getElementById("scenarioallenamento").classList.add("invisibile");
-        document.getElementById("spritebossdiv").classList.add("invisibile");
         document.getElementById("sprite").classList.remove("invisibile");
-                
         document.getElementById("sprite").src = "./img/robin_sprite.png";
+
         document.getElementById("points").classList.add("invisibile");
         document.getElementById("back").classList.add("invisibile");
         
         document.getElementById("spritediv").classList.remove("is-half-mobile");
-        document.getElementById("spritebossdiv").classList.remove("is-half-mobile");
-        
         document.getElementById("spritediv").classList.remove("is-4-desktop");
         document.getElementById("spritediv").classList.remove("is-offset-2-desktop");
+        document.getElementById("spritebossdiv").classList.remove("is-half-mobile");
         document.getElementById("spritebossdiv").classList.remove("is-4-desktop");
-
+        document.getElementById("spritebossdiv").classList.add("invisibile");
+        
         return;
     }
     
