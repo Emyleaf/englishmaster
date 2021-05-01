@@ -23,7 +23,7 @@ const parole = ["Agnello", "Alligatore", "Anatra", "Aquila", "Aragosta", "Asino"
 "Prosciutto", "Carne di maiale", "Piovra", "Pescespada", "Salmone",
 
 "Famiglia", "Genitori", "Padre", "Papà", "Madre", "Mamma", "Nonni", "Nonno", "Nonna", "Figlio", "Figlia", "Fratello", "Sorella", "Gemello", "Marito", "Moglie",
-"Cugino/a", "Uncle", "Aunt",
+"Cugino/a", "Zio", "Zia",
 
 "Attore", "Attrice", "Artista", "Panettiere", "Barista", "Costruttore", "Macellaio", "Capocuoco", "Chimico", "Cuoco", "Ballerino/a", "Dentista", "Direttore",
 "Medico", "Elettricista", "Ingegnere", "Contadino", "Pompiere", "Assistente di volo", "Fioraio", "Giardiniere", "Parrucchiere", "Giornalista", "Giudice",
@@ -381,9 +381,16 @@ function giocoinloopboss(cat){
     }
 }
 
+var audio = new Audio('./lvlupmod.mp3');
+audio.volume = 0.2;
+
+var audiovic = new Audio('./victory.mp3');
+audio.volume = 0.2;
+
 function winorlose(x, elem){
 
     if(x == 1){
+        audio.play();
         document.getElementById(elem).classList.add("is-success");
         document.getElementById("sprite").src = "./img/robin_sprite2.png";
     } else {
@@ -398,6 +405,7 @@ function winorlose(x, elem){
 function winorloseboss(x, elem){
 
     if(x == 1){
+        audio.play();
         counterp++;
         document.getElementById("points").innerHTML = counterp + "/" + counterpmax;
 
@@ -405,8 +413,9 @@ function winorloseboss(x, elem){
         document.getElementById("sprite").src = "./img/robin_sprite2.png";
 
         if(counterp == counterpmax){
-    
-            document.getElementById("vic").src = "./img/victory.gif";
+
+            audiovic.play();
+            document.getElementById("vic").src = "./img/victoryc.gif";
             document.getElementById("vic").classList.remove("invisibile");
             document.getElementById("scenarioallenamento").classList.add("invisibile");
             document.getElementById("scenarioboss").classList.add("invisibile");
@@ -442,7 +451,7 @@ function winorloseboss(x, elem){
                 document.getElementById("sprite").src = "./img/robin_sprite.png";
                 document.getElementById("sprite").classList.remove("invisibile");
                 
-            }, 7000);
+            }, 9000);
 
             return;
         }
