@@ -15,8 +15,29 @@ const parole = ["Agnello", "Alligatore", "Anatra", "Aquila", "Aragosta", "Asino"
 "Scarpe", "Stivali", "Sciarpa", "Cintura", "Cappello", "Cravatta", "Guanto", "Maglione", "Felpa", "Felpa cappuccio", "Collana", "Borsa", "Orologio", "Portafoglio",
 "Chiavi", "Orecchini", "Trucco", "Rossetto", "Braccialetto", 
 
+"Bianco", "Nero", "Verde", "Giallo", "Arancione", "Blu", "Rosa", "Marrone", "Porpora", "Rosso", "Oro", "Grigio", "Argento", "Viola", "Azzurro",
 
-"Bianco", "Nero", "Verde", "Giallo", "Arancione", "Blu", "Rosa", "Marrone", "Porpora", "Rosso", "Oro", "Grigio", "Argento", "Viola", "Azzurro"
+"Mela", "Arancia", "Banana", "Ananas", "Pera", "Pesca (Frutto)", "Melone", "Ciliegia", "Anguria", "Cocco", "Lampone", "Fragola", "Limone", "Uva", "Carota", "Patata",
+"Pomodoro", "Cipolla", "Aglio", "Zucca", "Mais", "Insalata", "Peperoncino", "Latte", "Uova", "Pane", "Burro", "Succo d'arancia", "Panna", "Formaggio",
+"Gelato", "Biscotto", "Cereale", "Acqua", "Vino", "Zuppa", "Olio", "Riso", "Sale", "Zucchero", "Cocacola", "Tè", "Caffè", "Pancetta", "Bistecca", "Polpette di carne",
+"Prosciutto", "Carne di maiale", "Piovra", "Pescespada", "Salmone",
+
+"Famiglia", "Genitori", "Padre", "Papà", "Madre", "Mamma", "Nonni", "Nonno", "Nonna", "Figlio", "Figlia", "Fratello", "Sorella", "Gemello", "Marito", "Moglie",
+"Cugino/a", "Uncle", "Aunt",
+
+"Attore", "Attrice", "Artista", "Panettiere", "Barista", "Costruttore", "Macellaio", "Capocuoco", "Chimico", "Cuoco", "Ballerino/a", "Dentista", "Direttore",
+"Medico", "Elettricista", "Ingegnere", "Contadino", "Pompiere", "Assistente di volo", "Fioraio", "Giardiniere", "Parrucchiere", "Giornalista", "Giudice",
+"Avvocato", "Bibliotecario", "Infermiera", "Pittore", "Fotografo", "Fisioterapista", "Idraulico", "Poliziotto", "Politico", "Postino", "Pensionato",
+"Marinaio", "Scienziato", "Segretario", "Commesso", "Cantante", "Insegnante", "Veterinario", "Cameriere", "Cameriera", "Scrittore",
+
+"Aerobica", "Tiro con l'arco", "Atletica", "Pallacanestro", "Arrampicata", "Ciclismo", "Freccette", "Tuffi", "Pesca (Sport)", "Calcio", "Escursionismo", "Equitazione",
+"Caccia", "Arti marziali", "Corsa", "Sci", "Nuoto", "Pallavolo", "Sollevamento pesi", "Palla", "Mazza da baseball", "Canna da pesca", "Scarpe da corsa", "Palestra",
+"Piscina", "Sconfitta", "Vittoria", "Pareggio", "Vincitore", "Perdente", "Lega", "Classifica", "Arbitro", "Punteggio",
+
+"Nuvole", "Luce del sole", "Mare", "Cielo", "Tempesta", "Pioggia", "Vento", "Lampo fulmine", "Brezza leggera", "Grandine", "Fiocchi di neve", "Tuono", 
+"Neve", "Nuvoloso", "Nebbioso", "Soleggiato", "Ventoso", "Tempestoso", "Giorno", "Notte", "Mezzogiorno", "Mezzanotte", "Mese", "Anno", "Ora", "Minuto",
+"Alba", "Tramonto", "Crepuscolo", "Oggi", "Ieri", "Domani", "Mattina", "Pomeriggio", "Sera"
+
 
 ]
 
@@ -43,7 +64,33 @@ const traduzione = [
 "Bracelet",
 
 //colori
-"White", "Black", "Green", "Yellow", "Orange", "Blue", "Pink", "Brown", "Purple", "Red", "Gold", "Grey", "Silver", "Violet", "Azure"
+"White", "Black", "Green", "Yellow", "Orange", "Blue", "Pink", "Brown", "Purple", "Red", "Gold", "Grey", "Silver", "Violet", "Azure",
+
+//alimenti
+"Apple", "Orange (Frutto)", "Banana", "Pineapple", "Pear", "Peach", "Melon", "Cherry", "Watermelon", "Coconut", "Raspberry", "Strawberry", "Lemon", "Grape",
+"Carrot", "Potato", "Tomato", "Onion", "Garlic", "Pumpkin", "Corn", "Salad", "Chili", "Milk", "Egg", "Bread", "Butter", "Orange juice", "Cream", "Cheese",
+"Ice cream", "Cookie", "Cereal", "Water", "Wine", "Soup", "Oil", "Rice", "Salt", "Sugar", "Coke", "Tea", "Coffee", "Bacon", "Steak", "Meatballs", "Ham",
+"Pork", "Octopus", "Swordfish", "Salmon",
+
+//famiglia
+"Family", "Parents", "Father", "Dad", "Mother", "Mom", "Grandparents", "Grandfather", "Grandmother", "Son", "Daughter", "Brother", "Sister", "Twin", "Husband",
+"Wife", "Cousin", "Uncle", "Aunt", //250
+
+//professioni
+"Actor", "Actress", "Artist", "Baker", "Barman", "Builder", "Butcher", "Chef", "Chemist", "Cook", "Dancer", "Dentist", "Director", "Doctor", "Electrician",
+"Engineer", "Farmer", "Firefighter", "Flight attendant", "Florist", "Gardener", "Hairdresser", "Journalist", "Judge", "Lawyer", "Librarian", "Nurse",
+"Painter", "Photographer", "Physiotherapist", "Plumber", "Policeman", "Politician", "Postman", "Retired", "Sailor", "Scientist", "Secretary", "Shop assistant",
+"Singer", "Teacher", "Vet", "Waiter", "Waitress", "Writer", //295
+
+//sports
+"Aerobics", "Archery", "Athletics", "Basketball", "Climbing", "Cycling", "Darts", "Diving", "Fishing", "Football/Soccer", "Hiking", "Horse-riding", "Hunting",
+"Martial arts", "Running", "Skiing", "Swimming", "Volleyball", "Weightlifting", "Ball", "Baseball bat", "Fishing rod", "Running shoes", "Gym", "Swimming pool",
+"Defeat/Loss", "Victory", "Draw", "Winner", "Loser", "League", "Placement", "Referee", "Score",
+
+//weather and time
+"Clouds", "Sunshine", "Sea", "Sky", "Storm", "Rain", "Wind", "Lightning", "Gentle breeze", "Hail", "Snowflakes", "Thunder", "Snow", "Cloudy", "Foggy",
+"Sunny", "Windy", "Stormy", "Day", "Night", "Highnoon", "Midnight", "Month", "Year", "Hour", "Minute", "Sunrise/Dawn", "Sunset", "Dusk/Nightfall",
+"Today", "Yesterday", "Tomorrow", "Morning", "Afternoon", "Evening"
 
     ]
 
@@ -57,14 +104,28 @@ const indici = [
     134,
     165, //vestiario e accessori
     166,
-    180 //colori
+    180, //colori
+    181,
+    231, //alimenti
+    232,
+    250, //family
+    251,
+    295, //jobs
+    296,
+    329, //sports
+    330,
+    364, //weather and time
+    365
+
 
 ]
 
 let categoria_scelta;
 let inizio_categoria;
 let fine_categoria;
-let numero_categorie = 5;
+let numero_categorie = 10;
+
+console.log(traduzione[364]);
 
 function hide_presentazione(alloppureboss){
 
@@ -78,6 +139,8 @@ function hide_presentazione(alloppureboss){
 
     x.classList.add("invisibile");
     y.classList.add("invisibile");
+    document.getElementById("downloadbtn").classList.add("invisibile");
+
     if(alloppureboss == 1){
         z.classList.remove("invisibile");
         zp.classList.remove("invisibile");
@@ -89,6 +152,8 @@ function hide_presentazione(alloppureboss){
     } else {
         x.classList.remove("invisibile");
         y.classList.remove("invisibile");
+            
+        document.getElementById("downloadbtn").classList.remove("invisibile");
             
         z.classList.add("invisibile");
         k.classList.add("invisibile");
@@ -131,6 +196,21 @@ function gioco(categoria, bossornot){
     } else if(categoria == "colors"){
         inizio_categoria = 166;
         fine_categoria = 180;
+    } else if(categoria == "foods"){
+        inizio_categoria = 181;
+        fine_categoria = 231;
+    } else if(categoria == "family"){
+        inizio_categoria = 232;
+        fine_categoria = 250;
+    } else if(categoria == "jobs"){
+        inizio_categoria = 251;
+        fine_categoria = 295;
+    } else if(categoria == "sports"){
+        inizio_categoria = 296;
+        fine_categoria = 329;
+    } else if(categoria == "weather"){
+        inizio_categoria = 330;
+        fine_categoria = 364;
     }
 
     categoria_scelta = categoria;
@@ -259,6 +339,21 @@ function giocoinloopboss(cat){
     } else if(n_categoria == 4){
         inizio_categoria = 166;
         fine_categoria = 180;
+    } else if(n_categoria == 5){
+        inizio_categoria = 181;
+        fine_categoria = 231;
+    } else if(n_categoria == 6){
+        inizio_categoria = 232;
+        fine_categoria = 250;
+    } else if(n_categoria == 7){
+        inizio_categoria = 251;
+        fine_categoria = 295;
+    } else if(n_categoria == 8){
+        inizio_categoria = 296;
+        fine_categoria = 329;
+    } else if(n_categoria == 9){
+        inizio_categoria = 330;
+        fine_categoria = 364;
     }
 
     let n_random = Math.floor(Math.random() * (fine_categoria+1 - inizio_categoria)) + inizio_categoria;
@@ -333,6 +428,8 @@ function winorloseboss(x, elem){
 
                 document.getElementById("benvenuto").classList.remove("invisibile");
                 document.getElementById("allenatioboss").classList.remove("invisibile");
+                        
+                document.getElementById("downloadbtn").classList.remove("invisibile");
                     
                 document.getElementById("allenamenti").classList.add("invisibile");
                 document.getElementById("iboss").classList.add("invisibile");
@@ -357,6 +454,8 @@ function winorloseboss(x, elem){
 
         document.getElementById("benvenuto").classList.remove("invisibile");
         document.getElementById("allenatioboss").classList.remove("invisibile");
+        
+        document.getElementById("downloadbtn").classList.remove("invisibile");
             
         document.getElementById("allenamenti").classList.add("invisibile");
         document.getElementById("iboss").classList.add("invisibile");
