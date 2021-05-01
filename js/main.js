@@ -36,7 +36,21 @@ const parole = ["Agnello", "Alligatore", "Anatra", "Aquila", "Aragosta", "Asino"
 
 "Nuvole", "Luce del sole", "Mare", "Cielo", "Tempesta", "Pioggia", "Vento", "Lampo fulmine", "Brezza leggera", "Grandine", "Fiocchi di neve", "Tuono", 
 "Neve", "Nuvoloso", "Nebbioso", "Soleggiato", "Ventoso", "Tempestoso", "Giorno", "Notte", "Mezzogiorno", "Mezzanotte", "Mese", "Anno", "Ora", "Minuto",
-"Alba", "Tramonto", "Crepuscolo", "Oggi", "Ieri", "Domani", "Mattina", "Pomeriggio", "Sera"
+"Alba", "Tramonto", "Crepuscolo", "Oggi", "Ieri", "Domani", "Mattina", "Pomeriggio", "Sera",
+
+"Io", "Tu/Voi", "Lui", "Lei", "Esso/a", "Noi", "Essi", "Mio", "Tuo/Vostro", "Di lui", "Di lei", "Di esso/a", "Nostro", "Di loro",
+
+"Alto", "Grasso", "Altezza", "Sovrappeso", "Basso", "Snello", "Bell'aspetto", "Figo", "Carina", "Brutto", "Vecchio", "Giovane",
+"Ricci (capelli)", "Lisci (capelli)", "Mossi (capelli)", "Ambizioso", "Noioso", "Coraggioso", "Calmo", "Prudente", "Fiducioso", "Creativo", "Deciso",
+"Determinato", "Stupido", "Amichevole", "Gentile", "Onesto", "Introverso", "Geloso", "Generoso", "Pigro", "Leale", "Pazzo", "Nervoso", "Educato", "Affidabile",
+"Responsabile", "Maleducato", "Egoista", "Serio", "Timido", "Intelligente", "Riflessivo",
+
+"Aeroporto", "Galleria d'arte", "Banca", "Fermata dell'autobus", "Pasticceria", "Campeggio", "Chiesa", "Caserma pompieri", "Casa vacanze", "Ospedale",
+"Biblioteca", "Museo", "Ufficio postale", "Ristorante", "Scuola", "Grattacielo", "Centro commerciale", "Teatro", "Municipio", "Stazione ferroviaria",
+"Università", "Salone di bellezza", "Negozio di vestiti", "Gioielleria", "Supermercato",
+
+"Aereo", "Ambulanza", "Bicicletta", "Barca", "Autobus", "Auto", "Carrozza", "Nave da crociera", "Traghetto", "Elicottero", "Moto", "Motoscafo", "Zattera",
+"Barca a vela", "Nave", "Navicella spaziale", "Sottomarino", "Carro armato", "Treno", "Metropolitana", "Furgone"
 
 
 ]
@@ -90,7 +104,24 @@ const traduzione = [
 //weather and time
 "Clouds", "Sunshine", "Sea", "Sky", "Storm", "Rain", "Wind", "Lightning", "Gentle breeze", "Hail", "Snowflakes", "Thunder", "Snow", "Cloudy", "Foggy",
 "Sunny", "Windy", "Stormy", "Day", "Night", "Highnoon", "Midnight", "Month", "Year", "Hour", "Minute", "Sunrise/Dawn", "Sunset", "Dusk/Nightfall",
-"Today", "Yesterday", "Tomorrow", "Morning", "Afternoon", "Evening"
+"Today", "Yesterday", "Tomorrow", "Morning", "Afternoon", "Evening", //364
+
+//pronomi
+"I", "You", "He", "She", "It", "We", "They", "My", "Your", "His", "Her", "Its", "Our", "Their", //378
+
+//aggettivi
+"Tall", "Fat", "Height", "Overweight", "Short", "Slim", "Goodlooking", "Handsome", "Pretty", "Ugly", "Old", "Young", "Curly", "Straight", "Wavy", "Ambitious",
+"Boring", "Brave", "Calm", "Cautious", "Confident", "Creative", "Decisive", "Determined", "Dumb", "Friendly", "Gentle", "Honest", "Introverted", "Jealous",
+"Kind", "Lazy", "Loyal", "Crazy/Mad", "Nervous", "Polite", "Reliable", "Responsible", "Rude", "Selfish", "Serious", "Shy", "Smart", "Thoughtful", //422
+
+//city
+"Airport", "Art gallery", "Bank", "Bus stop", "Cake shop", "Camping", "Church", "Fire station", "Holiday home", "Hospital", "Library", "Museum", 
+"Post office", "Restaurant", "School", "Skyscraper", "Shopping centre", "Theatre", "Town hall", "Train station", "University", "Beauty salon", 
+"Clothes shop", "Jewelry store", "Supermarket", //447
+
+//vehicles
+"Airplane", "Ambulance", "Bicycle", "Boat", "Bus", "Car", "Carriage", "Cruise ship", "Ferry boat", "Helicopter", "Motorcycle", "Motorboat", "Raft",
+"Sailing boat", "Ship", "Spaceship", "Submarine", "Tank", "Train", "Underground", "Van" //468
 
     ]
 
@@ -115,7 +146,15 @@ const indici = [
     329, //sports
     330,
     364, //weather and time
-    365
+    365,
+    378, // pronomi
+    379,
+    422, //aggettivi
+    423,
+    447, //city
+    448,
+    468, //vehicles
+    469 
 
 
 ]
@@ -123,9 +162,9 @@ const indici = [
 let categoria_scelta;
 let inizio_categoria;
 let fine_categoria;
-let numero_categorie = 10;
+let numero_categorie = 14;
 
-console.log(traduzione[364]);
+//console.log(traduzione[468]);
 
 function hide_presentazione(alloppureboss){
 
@@ -211,6 +250,18 @@ function gioco(categoria, bossornot){
     } else if(categoria == "weather"){
         inizio_categoria = 330;
         fine_categoria = 364;
+    } else if(categoria == "prono"){
+        inizio_categoria = 365;
+        fine_categoria = 378;
+    } else if(categoria == "adjecti"){
+        inizio_categoria = 379;
+        fine_categoria = 422;
+    } else if(categoria == "city"){
+        inizio_categoria = 423;
+        fine_categoria = 447;
+    } else if(categoria == "vehicles"){
+        inizio_categoria = 448;
+        fine_categoria = 468;
     }
 
     categoria_scelta = categoria;
@@ -229,10 +280,14 @@ function gioco(categoria, bossornot){
         if(categoria == "facile"){
             counterpmax = 10;
         } else if(categoria == "facile+"){
+            counterpmax = 15;
+        } else if(categoria == "facile++"){
             counterpmax = 20;
         } else if(categoria == "intermedio"){
             counterpmax = 30;
         } else if(categoria == "intermedio+"){
+            counterpmax = 35;
+        } else if(categoria == "intermedio++"){
             counterpmax = 40;
         } else if(categoria == "difficile"){
             counterpmax = 50;
@@ -301,10 +356,14 @@ function giocoinloopboss(cat){
         document.getElementById("spriteboss").src = "./img/slime.png";
     } else if(cat == "facile+"){
         document.getElementById("spriteboss").src = "./img/vampistrello.png";
+    } else if(cat == "facile++"){
+        document.getElementById("spriteboss").src = "./img/mimic.png";
     } else if(cat == "intermedio"){
         document.getElementById("spriteboss").src = "./img/jargon.png";
     } else if(cat == "intermedio+"){
         document.getElementById("spriteboss").src = "./img/golembronze.png";
+    } else if(cat == "intermedio++"){
+        document.getElementById("spriteboss").src = "./img/gigante.png";
     } else if(cat == "difficile"){
         document.getElementById("spriteboss").src = "./img/kingslime.png";
     } else if(cat == "difficile+"){
@@ -353,6 +412,18 @@ function giocoinloopboss(cat){
     } else if(n_categoria == 9){
         inizio_categoria = 330;
         fine_categoria = 364;
+    } else if(n_categoria == 10){
+        inizio_categoria = 365;
+        fine_categoria = 378;
+    } else if(n_categoria == 11){
+        inizio_categoria = 379;
+        fine_categoria = 422;
+    } else if(n_categoria == 12){
+        inizio_categoria = 423;
+        fine_categoria = 447;
+    } else if(n_categoria == 13){
+        inizio_categoria = 448;
+        fine_categoria = 468;
     }
 
     let n_random = Math.floor(Math.random() * (fine_categoria+1 - inizio_categoria)) + inizio_categoria;

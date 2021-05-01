@@ -16,7 +16,7 @@
     <link rel="icon" href="img/robin_sprite3.png">
 </head>
 <body>
-    <section class="section is-medium is-centered">
+    <section class="section is-centered">
 
         <video id="vic" class="invisibile has-text-centered is-justify-content-center" width="320" height="176">
             <source id="vicsrc" src="./victory.mp4" type="video/mp4">
@@ -44,6 +44,12 @@
             <button class="button is-warning is-rounded" onclick="gioco('jobs', 0)">Jobs 💼</button>
             <button class="button is-warning is-rounded" onclick="gioco('sports', 0)">Sports ⚽</button>
             <button class="button is-warning is-rounded" onclick="gioco('weather', 0)">Weather/Time 🌤</button>
+            <button class="button is-warning is-rounded" onclick="gioco('prono', 0)">Pronouns 📘</button>
+            <button class="button is-warning is-rounded" onclick="gioco('adjecti', 0)">Adjectives 📙</button>
+            <!-- <button class="button is-warning is-rounded" onclick="gioco('verbs', 0)">Verbs 📕</button>-->
+            <button class="button is-warning is-rounded" onclick="gioco('city', 0)">City 🏪</button>
+            <button class="button is-warning is-rounded" onclick="gioco('vehicles', 0)">Vehicles 🚒</button>
+            <!-- <button class="button is-warning is-rounded" onclick="gioco('emotions', 0)">Emotions 💖</button>-->
         </div>
         
         <h3 id="points" class="title has-text-centered invisibile"></h3>
@@ -51,11 +57,13 @@
         <div id="iboss" class="buttons are-medium is-justify-content-center invisibile">
             <button class="button is-success is-info is-rounded" onclick="gioco('facile', 1)">Slime</button>
             <button class="button is-success is-info is-rounded" onclick="gioco('facile+', 1)">Vampistrello</button>
+            <button class="button is-success is-info is-rounded" onclick="gioco('facile++', 1)">Mimic</button>
             <button class="button is-warning is-rounded" onclick="gioco('intermedio', 1)">Jargon</button>
             <button class="button is-warning is-info is-rounded" onclick="gioco('intermedio+', 1)">Golem</button>
+            <button class="button is-warning is-info is-rounded" onclick="gioco('intermedio++', 1)">Giant</button>
             <button class="button is-danger is-info is-rounded" onclick="gioco('difficile', 1)">King Slime</button>
-            <button class="button is-danger is-info is-rounded" onclick="gioco('difficile+', 1)">Drago</button>
-            <button class="button is-danger is-info is-rounded" onclick="gioco('impossibile', 1)">Dio del tuono</button>
+            <button class="button is-danger is-info is-rounded" onclick="gioco('difficile+', 1)">Dragon</button>
+            <button class="button is-danger is-info is-rounded" onclick="gioco('impossibile', 1)">Thunder God</button>
         </div>
 
         <div id="scenarioallenamento" class="has-text-centered invisibile">
