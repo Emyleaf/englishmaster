@@ -1,0 +1,31 @@
+@import "https://cdn.jsdelivr.net/npm/bulma@0.9.2/css/bulma.min.css";
+
+/* body {
+  display: grid;
+  place-items: center;
+  font-family: Arial, Helvetica, sans-serif;
+}*/
+
+.invisibile {
+  display: none;
+}
+.fullscreen:-webkit-full-screen {
+  width: auto !important;
+  height: auto !important;
+  margin: auto !important;
+}
+.fullscreen:-moz-full-screen {
+  width: auto !important;
+  height: auto !important;
+  margin: auto !important;
+}
+.fullscreen:-ms-full-screen {
+  width: auto !important;
+  height: auto !important;
+  margin: auto !important;
+}
+.fullscreen:-o-full-screen {
+  width: auto !important;
+  height: auto !important;
+  margin: auto !important;
+}
