@@ -382,10 +382,10 @@ function giocoinloopboss(cat){
 }
 
 var audio = new Audio('./lvlupmod.mp3');
-audio.volume = 0.2;
+audio.volume = 0.3;
 
 var audiovic = new Audio('./victory.mp3');
-audio.volume = 0.2;
+audiovic.volume = 0.3;
 
 function winorlose(x, elem){
 
