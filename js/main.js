@@ -382,7 +382,7 @@ function giocoinloopboss(cat){
 }
 
 var audio = new Audio('./lvlupmod.mp3');
-audio.volume = 0.3;
+audio.volume = 0.1;
 
 var audiovic = new Audio('./victory.mp3');
 audiovic.volume = 0.3;
@@ -412,50 +412,51 @@ function winorloseboss(x, elem){
         document.getElementById(elem).classList.add("is-success");
         document.getElementById("sprite").src = "./img/robin_sprite2.png";
 
-        if(counterp == counterpmax){
+        setTimeout(function(){
+            if(counterp == counterpmax){
 
-            audiovic.play();
-            document.getElementById("vic").src = "./img/victoryc.gif";
-            document.getElementById("vic").classList.remove("invisibile");
-            document.getElementById("scenarioallenamento").classList.add("invisibile");
-            document.getElementById("scenarioboss").classList.add("invisibile");
-            document.getElementById("back").classList.add("invisibile");
-            document.getElementById("points").classList.add("invisibile");
-            document.getElementById("spritebossdiv").classList.add("invisibile");
-            document.getElementById("sprite").classList.add("invisibile");
-                
-            document.getElementById("spritediv").classList.remove("is-half-mobile");
-            document.getElementById("spritebossdiv").classList.remove("is-half-mobile");
-                
-            document.getElementById("spritediv").classList.remove("is-4-desktop");
-            document.getElementById("spritediv").classList.remove("is-offset-2-desktop");
-            document.getElementById("spritebossdiv").classList.remove("is-4-desktop");
-
-            setTimeout(function () {
-                document.getElementById("vic").src = "";
-                document.getElementById("vic").classList.add("invisibile");
-
-                document.getElementById("benvenuto").classList.remove("invisibile");
-                document.getElementById("allenatioboss").classList.remove("invisibile");
-                        
-                document.getElementById("downloadbtn").classList.remove("invisibile");
-                    
-                document.getElementById("allenamenti").classList.add("invisibile");
-                document.getElementById("iboss").classList.add("invisibile");
-                document.getElementById("allenamentip").classList.add("invisibile");
-                document.getElementById("ibossp").classList.add("invisibile");
-                
+                audiovic.play();
+                document.getElementById("vic").src = "./img/victoryc.gif";
+                document.getElementById("vic").classList.remove("invisibile");
                 document.getElementById("scenarioallenamento").classList.add("invisibile");
-                document.getElementById("scenarioboss").classList.remove("invisibile");
+                document.getElementById("scenarioboss").classList.add("invisibile");
+                document.getElementById("back").classList.add("invisibile");
+                document.getElementById("points").classList.add("invisibile");
+                document.getElementById("spritebossdiv").classList.add("invisibile");
+                document.getElementById("sprite").classList.add("invisibile");
+                    
+                document.getElementById("spritediv").classList.remove("is-half-mobile");
+                document.getElementById("spritebossdiv").classList.remove("is-half-mobile");
+                    
+                document.getElementById("spritediv").classList.remove("is-4-desktop");
+                document.getElementById("spritediv").classList.remove("is-offset-2-desktop");
+                document.getElementById("spritebossdiv").classList.remove("is-4-desktop");
+    
+                setTimeout(function () {
+                    document.getElementById("vic").src = "";
+                    document.getElementById("vic").classList.add("invisibile");
+    
+                    document.getElementById("benvenuto").classList.remove("invisibile");
+                    document.getElementById("allenatioboss").classList.remove("invisibile");
+                            
+                    document.getElementById("downloadbtn").classList.remove("invisibile");
                         
-                document.getElementById("sprite").src = "./img/robin_sprite.png";
-                document.getElementById("sprite").classList.remove("invisibile");
-                
-            }, 9000);
+                    document.getElementById("allenamenti").classList.add("invisibile");
+                    document.getElementById("iboss").classList.add("invisibile");
+                    document.getElementById("allenamentip").classList.add("invisibile");
+                    document.getElementById("ibossp").classList.add("invisibile");
+                    
+                    document.getElementById("scenarioallenamento").classList.add("invisibile");
+                    document.getElementById("scenarioboss").classList.remove("invisibile");
+                            
+                    document.getElementById("sprite").src = "./img/robin_sprite.png";
+                    document.getElementById("sprite").classList.remove("invisibile");
+                    
+                }, 9000);
 
-            return;
-        }
-
+                return;
+            }
+        }, 1500);
     } else {
 
         document.getElementById(elem).classList.add("is-danger");
