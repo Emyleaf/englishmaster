@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <section class="section is-medium is-desktop is-centered">
+    <section class="section is-medium is-centered">
         <div id="benvenuto" class="content is-large">
             <h2 class="title is-centered has-text-centered">Become an</h2>
             <h4 class="subtitle has-text-centered">ultimateturbofigodungeonenglish</h4> <h1 class="title has-text-centered">Master!</h1>
@@ -25,14 +25,19 @@
             <button class="button is-warning is-rounded" onclick="gioco('body', 0)">Body parts 💪</button>
             <button class="button is-warning is-rounded" onclick="gioco('house', 0)">Furniture 🏠</button>
             <button class="button is-warning is-rounded" onclick="gioco('clothes', 0)">Clothes & Accessories 👗</button>
+            <button class="button is-warning is-rounded" onclick="gioco('colors', 0)">Colors 🎨</button>
         </div>
         
         <h3 id="points" class="title has-text-centered invisibile"></h3>
         <h3 id="ibossp" class="title has-text-centered invisibile"> Che boss vuoi affrontare?</h3><br>
         <div id="iboss" class="buttons are-medium is-justify-content-center invisibile">
-            <button class="button is-success is-info is-rounded" onclick="gioco('facile', 1)">BOSS buono dai</button>
-            <button class="button is-warning is-info is-rounded" onclick="">BOSS Ok</button>
-            <button class="button is-danger is-danger is-rounded" onclick="">BOSS FINALE</button>
+            <button class="button is-success is-info is-rounded" onclick="gioco('facile', 1)">Slime</button>
+            <button class="button is-success is-info is-rounded" onclick="gioco('facile+', 1)">Vampistrello</button>
+            <button class="button is-warning is-rounded" onclick="gioco('intermedio', 1)">Jargon</button>
+            <button class="button is-warning is-info is-rounded" onclick="gioco('intermedio+', 1)">Golem</button>
+            <button class="button is-danger is-info is-rounded" onclick="gioco('difficile', 1)">King Slime</button>
+            <button class="button is-danger is-info is-rounded" onclick="gioco('difficile+', 1)">Drago</button>
+            <button class="button is-danger is-info is-rounded" onclick="gioco('impossibile', 1)">Dio del tuono</button>
         </div>
 
         <div id="scenarioallenamento" class="has-text-centered invisibile">
@@ -42,9 +47,13 @@
         </div>
 
         <br>
-        <div id="scenarioboss" class="has-text-centered">
-            <img id="sprite" src="./img/robin_sprite.png" alt="robin">
-            <img id="spriteboss" class="invisibile" src="./img/slime.png" alt="boss">
+        <div id="scenarioboss" class="columns is-mobile has-text-centered">
+            <div id="spritediv" class="column">
+                <img id="sprite" src="./img/robin_sprite.png" alt="robin">
+            </div>
+            <div id="spritebossdiv" class="column invisibile">
+                <img id="spriteboss" src="./img/slime.png" alt="boss">
+            </div>
         </div>
         <br>
 
