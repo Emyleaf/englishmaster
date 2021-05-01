@@ -382,9 +382,6 @@ function giocoinloopboss(cat){
 
 var audio = new Audio('./lvlupmodbassissimo.mp3');
 
-/*var audiovic = new Audio('./victory.mp3');
-audiovic.volume = 0.3;*/
-
 function winorlose(x, elem){
 
     if(x == 1){
@@ -427,7 +424,6 @@ function winorloseboss(x, elem){
                     document.getElementById("vic").classList.add("centro");
                     document.getElementById("vic").classList.remove("invisibile");
                     document.getElementById("vic").play();
-                    //document.getElementById("vic").src = "./img/victoryc.gif";
         
                     setTimeout(function () {
                         document.getElementById("vic").pause();
@@ -487,15 +483,3 @@ function winorloseboss(x, elem){
         giocoinloopboss();
     }, 1000);
 }
-
-function wait(ms){
-    var start = new Date().getTime();
-    var end = start;
-    while(end < start + ms) {
-      end = new Date().getTime();
-   }
- }
-
- function prova(){
-    document.getElementById("vic").play();
- }
