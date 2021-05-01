@@ -163,6 +163,12 @@ let categoria_scelta;
 let inizio_categoria;
 let fine_categoria;
 let numero_categorie = 14;
+let sprite_robin = "./img/robin_sprite.png";
+let sprite_takumi = "./img/takumi_sprite.png";
+let sprite_selezionato = sprite_robin;
+let vittoria_robin = "./mp4/victory_robin.mp4";
+let vittoria_takumi = "./mp4/victory_takumi.mp4";
+let vittoria_selezionata = vittoria_robin;
 
 //console.log(traduzione[468]);
 
@@ -179,6 +185,8 @@ function hide_presentazione(alloppureboss){
     x.classList.add("invisibile");
     y.classList.add("invisibile");
     document.getElementById("downloadbtn").classList.add("invisibile");
+    document.getElementById("changepg").classList.add("invisibile");
+    
 
     if(alloppureboss == 1){
         z.classList.remove("invisibile");
@@ -193,6 +201,7 @@ function hide_presentazione(alloppureboss){
         y.classList.remove("invisibile");
             
         document.getElementById("downloadbtn").classList.remove("invisibile");
+        document.getElementById("changepg").classList.remove("invisibile");
             
         z.classList.add("invisibile");
         k.classList.add("invisibile");
@@ -313,7 +322,7 @@ function giocoinloop(){
     let sce1 = document.getElementById("scelta1");
     let sce2 = document.getElementById("scelta2");
 
-    document.getElementById("sprite").src = "./img/robin_sprite.png";
+    document.getElementById("sprite").src = sprite_selezionato;
     sce1.classList.remove("is-success");
     sce2.classList.remove("is-success");
     sce1.classList.remove("is-danger");
@@ -377,7 +386,7 @@ function giocoinloopboss(cat){
     sce1.classList.remove("is-danger");
     sce2.classList.remove("is-danger");
     
-    document.getElementById("sprite").src = "./img/robin_sprite.png";
+    document.getElementById("sprite").src = sprite_selezionato;
     document.getElementById("points").innerHTML = counterp + "/" + counterpmax;
 
     let n_categoria = Math.floor(Math.random() * numero_categorie);
@@ -458,7 +467,11 @@ function winorlose(x, elem){
     if(x == 1){
         audio.play();
         document.getElementById(elem).classList.add("is-success");
-        document.getElementById("sprite").src = "./img/robin_sprite2.png";
+        if(sprite_selezionato == sprite_robin){
+            document.getElementById("sprite").src = "./img/robin_sprite2.png";
+        } else {
+            document.getElementById("sprite").src = "./img/takumi_sprite2.png";
+        }
     } else {
         document.getElementById(elem).classList.add("is-danger");
     }
@@ -476,7 +489,11 @@ function winorloseboss(x, elem){
         document.getElementById("points").innerHTML = counterp + "/" + counterpmax;
 
         document.getElementById(elem).classList.add("is-success");
-        document.getElementById("sprite").src = "./img/robin_sprite2.png";
+        if(sprite_selezionato == sprite_robin){
+            document.getElementById("sprite").src = "./img/robin_sprite2.png";
+        } else {
+            document.getElementById("sprite").src = "./img/takumi_sprite2.png";
+        }
 
         if(counterp == counterpmax){
 
@@ -504,6 +521,7 @@ function winorloseboss(x, elem){
                         document.getElementById("benvenuto").classList.remove("invisibile");
                         document.getElementById("allenatioboss").classList.remove("invisibile");
                         document.getElementById("downloadbtn").classList.remove("invisibile");
+                        document.getElementById("changepg").classList.remove("invisibile");
 
                         document.getElementById("scenarioboss").classList.remove("invisibile");
                         document.getElementById("spritediv").classList.remove("is-half-mobile");
@@ -527,6 +545,7 @@ function winorloseboss(x, elem){
         document.getElementById("allenatioboss").classList.remove("invisibile");
         
         document.getElementById("downloadbtn").classList.remove("invisibile");
+        document.getElementById("changepg").classList.remove("invisibile");
             
         document.getElementById("allenamenti").classList.add("invisibile");
         document.getElementById("allenamentip").classList.add("invisibile");
@@ -535,7 +554,7 @@ function winorloseboss(x, elem){
         
         document.getElementById("scenarioallenamento").classList.add("invisibile");
         document.getElementById("sprite").classList.remove("invisibile");
-        document.getElementById("sprite").src = "./img/robin_sprite.png";
+        document.getElementById("sprite").src = sprite_selezionato;
 
         document.getElementById("points").classList.add("invisibile");
         document.getElementById("back").classList.add("invisibile");
@@ -553,4 +572,17 @@ function winorloseboss(x, elem){
     setTimeout(function () {
         giocoinloopboss();
     }, 1000);
+}
+
+function changespritepg(){
+    if(sprite_selezionato == sprite_robin){
+        sprite_selezionato = sprite_takumi;
+        vittoria_selezionata = vittoria_takumi;
+    } else {
+        sprite_selezionato = sprite_robin;
+        vittoria_selezionata = vittoria_robin;
+    }
+
+    document.getElementById("sprite").src = sprite_selezionato;
+    document.getElementById("vic").src = vittoria_selezionata;
 }
