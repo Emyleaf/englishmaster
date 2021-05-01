@@ -380,7 +380,7 @@ function giocoinloopboss(cat){
     }
 }
 
-var audio = new Audio('./lvlupmodbasso.mp3');
+var audio = new Audio('./lvlupmodbassissimo.mp3');
 
 /*var audiovic = new Audio('./victory.mp3');
 audiovic.volume = 0.3;*/
