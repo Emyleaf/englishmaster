@@ -382,10 +382,10 @@ function giocoinloopboss(cat){
 }
 
 var audio = new Audio('./lvlupmod.mp3');
-audio.volume = 0.1;
+audio.volume = 0.02;
 
-var audiovic = new Audio('./victory.mp3');
-audiovic.volume = 0.3;
+/*var audiovic = new Audio('./victory.mp3');
+audiovic.volume = 0.3;*/
 
 function winorlose(x, elem){
 
@@ -414,10 +414,10 @@ function winorloseboss(x, elem){
 
         setTimeout(function(){
             if(counterp == counterpmax){
-
-                audiovic.play();
-                document.getElementById("vic").src = "./img/victoryc.gif";
+                
                 document.getElementById("vic").classList.remove("invisibile");
+                document.getElementById("vic").play();
+                //document.getElementById("vic").src = "./img/victoryc.gif";
                 document.getElementById("scenarioallenamento").classList.add("invisibile");
                 document.getElementById("scenarioboss").classList.add("invisibile");
                 document.getElementById("back").classList.add("invisibile");
@@ -433,7 +433,7 @@ function winorloseboss(x, elem){
                 document.getElementById("spritebossdiv").classList.remove("is-4-desktop");
     
                 setTimeout(function () {
-                    document.getElementById("vic").src = "";
+                    document.getElementById("vic").pause();
                     document.getElementById("vic").classList.add("invisibile");
     
                     document.getElementById("benvenuto").classList.remove("invisibile");
@@ -456,7 +456,7 @@ function winorloseboss(x, elem){
 
                 return;
             }
-        }, 1500);
+        }, 1000);
     } else {
 
         document.getElementById(elem).classList.add("is-danger");
@@ -501,4 +501,8 @@ function wait(ms){
     while(end < start + ms) {
       end = new Date().getTime();
    }
+ }
+
+ function prova(){
+    document.getElementById("vic").play();
  }
