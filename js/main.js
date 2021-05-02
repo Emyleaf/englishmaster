@@ -147,7 +147,7 @@ const traduzione = [
 "Curious", "Curiosity", "Depressed", "Depression", "Disappointed", "Disappointment", "Embarrassed", "Embarrassment", "Guilty", "Hated", "Hate", "Hopeful",
 "Hope", "Lonely", "Loneliness", "Loved", "Proud", "Sad", "Sadness", "Surprised", "Tired", "Worried"
 
-    ]
+]
 
 const indici = [
     0,
@@ -181,8 +181,7 @@ const indici = [
     469,
     551, //verbs
     552,
-    588, //emotions
-
+    588 //emotions
 
 ]
 
@@ -199,7 +198,7 @@ let vittoria_takumi = "./mp4/victory_takumi.mp4";
 let vittoria_tiki = "./mp4/victory_tiki.mp4";
 let vittoria_selezionata = vittoria_robin;
 
-console.log(parole[588]);
+//console.log(parole[588]);
 
 function hide_presentazione(alloppureboss){
 
