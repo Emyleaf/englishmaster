@@ -50,7 +50,19 @@ const parole = ["Agnello", "Alligatore", "Anatra", "Aquila", "Aragosta", "Asino"
 "Università", "Salone di bellezza", "Negozio di vestiti", "Gioielleria", "Supermercato",
 
 "Aereo", "Ambulanza", "Bicicletta", "Barca", "Autobus", "Auto", "Carrozza", "Nave da crociera", "Traghetto", "Elicottero", "Moto", "Motoscafo", "Zattera",
-"Barca a vela", "Nave", "Navicella spaziale", "Sottomarino", "Carro armato", "Treno", "Metropolitana", "Furgone"
+"Barca a vela", "Nave", "Navicella spaziale", "Sottomarino", "Carro armato", "Treno", "Metropolitana", "Furgone",
+
+"Essere", "Diventare", "Cominciare", "Scommettere", "Rompere", "Portare", "Costruire", "Comprare", "Potere", "Catturare", "Scegliere", "Venire", "Tagliare",
+"Fare", "Guidare", "Bere", "Mangiare", "Cadere", "Nutrire", "Sentire (sentimento)", "Combattere", "Volare", "Dimenticare", "Perdonare", "Congelare", "Prendere",
+"Dare", "Andare", "Crescere", "Avere", "Sentire", "Nascondere", "Colpire", "Tenere", "Ferire", "Conservare", "Conoscere", "Distendere", "Condurre", "Imparare", 
+"Lasciare", "Mentire", "Intendere", "Incontrare", "Fraintendere", "Pagare", "Mettere", "Uscire/Smettere", "Leggere", "Cavalcare", "Suonare",
+"Salire/aumentare", "Correre", "Dire", "Vedere", "Cercare", "Vendere", "Spedire", "Mettere/Collocare", "Agitare", "Sparare", "Cantare", "Sedersi", "Dormire", "Uccidere",
+"Scorrere", "Odorare", "Parlare", "Spendere", "Dividere", "Diffondere", "Alzarsi/Stare sul posto", "Rubare", "Appiccicare", "Puzzare", "Nuotare", "Insegnare", "Raccontare",
+"Pensare", "Lanciare", "Svegliarsi", "Vestire", "Scrivere", //551
+
+"Felice", "Felicità", "Impaurito", "Paura", "Arrabbiato", "Rabbia", "Infastidito", "Ansioso", "Ansia", "Apatico", "Apatia", "Vergognoso", "Vergogna",
+"Annoiato", "Noia", "Curioso", "Curiosità", "Depresso", "Depressione", "Deluso", "Delusione", "Imbarazzato", "Imbarazzo", "Colpevole", "Odiato", "Odio",
+"Speranzoso", "Speranza", "Solitario", "Solitudine", "Amato", "Orgoglioso", "Triste", "Tristezza", "Sorpreso", "Stanco", "Preoccupato"
 
 
 ]
@@ -121,7 +133,19 @@ const traduzione = [
 
 //vehicles
 "Airplane", "Ambulance", "Bicycle", "Boat", "Bus", "Car", "Carriage", "Cruise ship", "Ferry boat", "Helicopter", "Motorcycle", "Motorboat", "Raft",
-"Sailing boat", "Ship", "Spaceship", "Submarine", "Tank", "Train", "Underground", "Van" //468
+"Sailing boat", "Ship", "Spaceship", "Submarine", "Tank", "Train", "Underground", "Van", //468
+
+//verbs
+"Be", "Become", "Begin", "Bet", "Break", "Bring", "Build", "Buy", "Can", "Catch", "Choose", "Come", "Cut", "Do/Make", "Drive", "Drink", "Eat", "Fall", "Feed",
+"Feel", "Fight", "Fly", "Forget", "Forgive", "Freeze", "Take/Get", "Give", "Go", "Grow", "Have", "Hear", "Hide", "Hit", "Hold", "Hurt", "Keep", "Know", "Lay", "Lead",
+"Learn", "Leave/Let", "Lie", "Mean", "Meet", "Misunderstand", "Pay", "Put", "Quit", "Read", "Ride", "Ring", "Rise", "Run", "Say", "See", "Seek/Look for", "Sell", "Send",
+"Set", "Shake", "Shoot", "Sing", "Sit", "Sleep", "Slay", "Slide", "Smell", "Speak", "Spend", "Split", "Spread", "Stand", "Steal", "Stick", "Stink", "Swim",
+"Teach", "Tell", "Think", "Throw", "Wake", "Wear", "Write", //551
+
+//emotions
+"Happy", "Happiness", "Afraid", "Fear", "Angry", "Anger", "Annoyed", "Anxious", "Anxiety", "Apathetic", "Apathy", "Ashamed", "Shame", "Bored", "Boredom",
+"Curious", "Curiosity", "Depressed", "Depression", "Disappointed", "Disappointment", "Embarrassed", "Embarrassment", "Guilty", "Hated", "Hate", "Hopeful",
+"Hope", "Lonely", "Loneliness", "Loved", "Proud", "Sad", "Sadness", "Surprised", "Tired", "Worried"
 
     ]
 
@@ -154,7 +178,10 @@ const indici = [
     447, //city
     448,
     468, //vehicles
-    469 
+    469,
+    551, //verbs
+    552,
+    588, //emotions
 
 
 ]
@@ -162,7 +189,7 @@ const indici = [
 let categoria_scelta;
 let inizio_categoria;
 let fine_categoria;
-let numero_categorie = 14;
+let numero_categorie = 16;
 let sprite_robin = "./img/robin_sprite.png";
 let sprite_takumi = "./img/takumi_sprite.png";
 let sprite_tiki = "./img/tiki_sprite.png";
@@ -172,7 +199,7 @@ let vittoria_takumi = "./mp4/victory_takumi.mp4";
 let vittoria_tiki = "./mp4/victory_tiki.mp4";
 let vittoria_selezionata = vittoria_robin;
 
-//console.log(traduzione[468]);
+console.log(parole[588]);
 
 function hide_presentazione(alloppureboss){
 
@@ -273,6 +300,12 @@ function gioco(categoria, bossornot){
     } else if(categoria == "vehicles"){
         inizio_categoria = 448;
         fine_categoria = 468;
+    } else if(categoria == "verbs"){
+        inizio_categoria = 469;
+        fine_categoria = 551;
+    } else if(categoria == "emotions"){
+        inizio_categoria = 552;
+        fine_categoria = 588;
     }
 
     categoria_scelta = categoria;
@@ -435,6 +468,12 @@ function giocoinloopboss(cat){
     } else if(n_categoria == 13){
         inizio_categoria = 448;
         fine_categoria = 468;
+    } else if(n_categoria == 14){
+        inizio_categoria = 469;
+        fine_categoria = 551;
+    } else if(n_categoria == 15){
+        inizio_categoria = 552;
+        fine_categoria = 588;
     }
 
     let n_random = Math.floor(Math.random() * (fine_categoria+1 - inizio_categoria)) + inizio_categoria;
