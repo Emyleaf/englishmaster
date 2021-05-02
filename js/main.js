@@ -165,9 +165,11 @@ let fine_categoria;
 let numero_categorie = 14;
 let sprite_robin = "./img/robin_sprite.png";
 let sprite_takumi = "./img/takumi_sprite.png";
+let sprite_tiki = "./img/tiki_sprite.png";
 let sprite_selezionato = sprite_robin;
 let vittoria_robin = "./mp4/victory_robin.mp4";
 let vittoria_takumi = "./mp4/victory_takumi.mp4";
+let vittoria_tiki = "./mp4/victory_tiki.mp4";
 let vittoria_selezionata = vittoria_robin;
 
 //console.log(traduzione[468]);
@@ -469,8 +471,10 @@ function winorlose(x, elem){
         document.getElementById(elem).classList.add("is-success");
         if(sprite_selezionato == sprite_robin){
             document.getElementById("sprite").src = "./img/robin_sprite2.png";
-        } else {
+        } else if(sprite_selezionato == sprite_takumi) {
             document.getElementById("sprite").src = "./img/takumi_sprite2.png";
+        } else if(sprite_selezionato == sprite_tiki) {
+            document.getElementById("sprite").src = "./img/tiki_sprite2.png";
         }
     } else {
         document.getElementById(elem).classList.add("is-danger");
@@ -489,10 +493,13 @@ function winorloseboss(x, elem){
         document.getElementById("points").innerHTML = counterp + "/" + counterpmax;
 
         document.getElementById(elem).classList.add("is-success");
+
         if(sprite_selezionato == sprite_robin){
             document.getElementById("sprite").src = "./img/robin_sprite2.png";
-        } else {
+        } else if(sprite_selezionato == sprite_takumi) {
             document.getElementById("sprite").src = "./img/takumi_sprite2.png";
+        } else if(sprite_selezionato == sprite_tiki) {
+            document.getElementById("sprite").src = "./img/tiki_sprite2.png";
         }
 
         if(counterp == counterpmax){
@@ -578,6 +585,9 @@ function changespritepg(){
     if(sprite_selezionato == sprite_robin){
         sprite_selezionato = sprite_takumi;
         vittoria_selezionata = vittoria_takumi;
+    } else if(sprite_selezionato == sprite_takumi) {
+        sprite_selezionato = sprite_tiki;
+        vittoria_selezionata = vittoria_tiki;
     } else {
         sprite_selezionato = sprite_robin;
         vittoria_selezionata = vittoria_robin;
