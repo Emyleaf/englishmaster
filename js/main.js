@@ -327,21 +327,21 @@ function gioco(categoria, bossornot){
         if(categoria == "facile"){
             counterpmax = 10;
         } else if(categoria == "facile+"){
-            counterpmax = 15;
-        } else if(categoria == "facile++"){
             counterpmax = 20;
-        } else if(categoria == "intermedio"){
+        } else if(categoria == "facile++"){
             counterpmax = 30;
-        } else if(categoria == "intermedio+"){
-            counterpmax = 35;
-        } else if(categoria == "intermedio++"){
+        } else if(categoria == "intermedio"){
             counterpmax = 40;
+        } else if(categoria == "intermedio+"){
+            counterpmax = 60;
+        } else if(categoria == "intermedio++"){
+            counterpmax = 80;
         } else if(categoria == "difficile"){
-            counterpmax = 50;
-        } else if(categoria == "difficile+"){
-            counterpmax = 75;
-        } else if(categoria == "impossibile"){
             counterpmax = 100;
+        } else if(categoria == "difficile+"){
+            counterpmax = 125;
+        } else if(categoria == "impossibile"){
+            counterpmax = 150;
         }
 
         giocoinloopboss(categoria);
