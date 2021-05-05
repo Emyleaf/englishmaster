@@ -253,8 +253,10 @@ function hide_presentazione(alloppureboss){
         document.getElementById("spritediv").classList.remove("is-4-desktop");
         document.getElementById("spritediv").classList.remove("is-offset-2-desktop");
         document.getElementById("spritebossdiv").classList.remove("is-4-desktop");
-        
     }
+    
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
 }
 
 function gioco(categoria, bossornot){
@@ -351,6 +353,9 @@ function gioco(categoria, bossornot){
         document.getElementById("points").classList.remove("invisibile");
         document.getElementById("spritebossdiv").classList.remove("invisibile");
     }
+
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
 }
 
 function giocoinloop(){
