@@ -1154,7 +1154,7 @@ function giocoinlooptorre(){
     }
 }
 
-var audio = new Audio('./lvlupmodbassissimo.mp3');
+var audio = new Audio('./lvlup2.0.mp3');
 
 function winorlose(x, elem){
 
@@ -1176,7 +1176,7 @@ function winorlose(x, elem){
     
     setTimeout(function () {
         giocoinloop();
-    }, 1000);
+    }, 700);
 }
 
 function winorloseboss(x, elem){
@@ -1208,7 +1208,7 @@ function winorloseboss(x, elem){
                 document.getElementById("scenarioallenamento").classList.add("invisibile");
                 document.getElementById("spritediv").classList.add("invisibile");
                 document.getElementById("spritebossdiv").classList.add("invisibile");
-            }, 1000);
+            }, 700);
 
             setTimeout(function(){
                     
@@ -1236,7 +1236,7 @@ function winorloseboss(x, elem){
                         document.getElementById("spritebossdiv").classList.add("invisibile");
                         
                     }, 10000);
-            }, 1000);
+            }, 700);
         }
 
     } else {
@@ -1274,7 +1274,7 @@ function winorloseboss(x, elem){
     
     setTimeout(function () {
         giocoinloopboss();
-    }, 1000);
+    }, 700);
 }
 
 function winorlosetorre(x, elem){
@@ -1317,7 +1317,7 @@ function winorlosetorre(x, elem){
                 
                 document.getElementById("lvl").innerHTML = "";
         
-            }, 1000);
+            }, 700);
 
             setTimeout(function(){
                     
@@ -1347,7 +1347,7 @@ function winorlosetorre(x, elem){
                         document.getElementById("lvl").innerHTML = "";
                         
                     }, 10000);
-            }, 1000);
+            }, 700);
         }
 
     } else {
@@ -1396,7 +1396,7 @@ function winorlosetorre(x, elem){
     
     setTimeout(function () {
         giocoinlooptorre();
-    }, 1000);
+    }, 700);
 }
 
 function changespritepg(){
