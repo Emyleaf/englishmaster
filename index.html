@@ -30,6 +30,7 @@
         <div id="allenatioboss" class="buttons are-medium is-justify-content-center">
             <button class="button is-info is-rounded" onclick="hide_presentazione(1)">Allenati</button>
             <button class="button is-danger is-rounded" onclick="hide_presentazione(2)">Sfida i boss</button>
+            <button class="button is-success is-rounded" onclick="hide_presentazione(4)">Avventura</button>
         </div>
 
         <h3 id="allenamentip" class="title has-text-centered invisibile"> In cosa vuoi allenarti?</h3><br>
@@ -50,6 +51,13 @@
             <button class="button is-warning is-rounded" onclick="gioco('city', 0)">City 🏪</button>
             <button class="button is-warning is-rounded" onclick="gioco('vehicles', 0)">Vehicles 🚒</button>
             <button class="button is-warning is-rounded" onclick="gioco('emotions', 0)">Emotions 💖</button>
+        </div>
+
+        <div id="probardiv" class="columns is-mobile has-text-centered is-justify-content-center">
+            <div id="lvl" class="title"></div>
+            <div id="probar" class="column is-4-desktop invisibile">
+                <progress id="bar" class="progress is-success" value="100" max="100"></progress>
+            </div>
         </div>
         
         <h3 id="points" class="title has-text-centered invisibile"></h3>
@@ -95,7 +103,7 @@
         <br>
 
         <div id="changepg" class="has-text-centered is-justify-content-center">
-            <button class="button is-success is-rounded" onclick="changespritepg()">Cambia personaggio</button>
+            <button class="button is-primary is-rounded" onclick="changespritepg()">Cambia personaggio</button>
         </div>
 
     <script src="js/main.js"></script>
