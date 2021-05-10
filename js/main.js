@@ -219,7 +219,9 @@ let vittoria_tiki = "./mp4/victory_tiki.mp4";
 let vittoria_roy = "./mp4/victory_roy.mp4";
 let vittoria_selezionata = vittoria_robin;
 
-console.log(traduzione[426]);
+let goanim;
+let stopanim;
+//console.log(traduzione[426]);
 
 function hide_presentazione(alloppureboss) {
 
@@ -259,6 +261,7 @@ function hide_presentazione(alloppureboss) {
 
         gioco('infinite', 2);
     } else {
+
         x.classList.remove("invisibile");
         y.classList.remove("invisibile");
 
@@ -288,6 +291,12 @@ function hide_presentazione(alloppureboss) {
         document.getElementById("spritebossdiv").classList.remove("is-4-desktop");
 
         document.getElementById("lvl").innerHTML = "";
+
+        clearInterval(goanim);
+        clearInterval(stopanim);
+        document.getElementById("spriteboss").classList.remove("anim");
+        goanim = 0;
+        stopanim = 0;
     }
 
     document.body.scrollTop = 0;
@@ -393,6 +402,10 @@ function gioco(categoria, bossornot) {
         document.getElementById("spritebossdiv").classList.add("is-4-desktop");
         document.getElementById("points").classList.remove("invisibile");
         document.getElementById("spritebossdiv").classList.remove("invisibile");
+
+        goanim = setInterval(starta, 4000);
+        stopanim = setInterval(stopa, 8000);
+
     } else {
 
         counterp = 0;
@@ -406,6 +419,9 @@ function gioco(categoria, bossornot) {
         document.getElementById("spritebossdiv").classList.add("is-4-desktop");
         document.getElementById("points").classList.add("invisibile");
         document.getElementById("spritebossdiv").classList.remove("invisibile");
+        
+        goanim = setInterval(starta, 4000);
+        stopanim = setInterval(stopa, 8000);
     }
 
     document.body.scrollTop = 0;
@@ -1237,6 +1253,12 @@ function winorloseboss(x, elem) {
         }
 
         if (counterp == counterpmax) {
+            
+            clearInterval(goanim);
+            clearInterval(stopanim);
+            document.getElementById("spriteboss").classList.remove("anim");
+            goanim = 0;
+            stopanim = 0;
 
             setTimeout(function () {
                 document.getElementById("back").classList.add("invisibile");
@@ -1246,6 +1268,7 @@ function winorloseboss(x, elem) {
                 document.getElementById("scenarioallenamento").classList.add("invisibile");
                 document.getElementById("spritediv").classList.add("invisibile");
                 document.getElementById("spritebossdiv").classList.add("invisibile");
+     
             }, 700);
 
             setTimeout(function () {
@@ -1273,6 +1296,11 @@ function winorloseboss(x, elem) {
                     document.getElementById("spritebossdiv").classList.remove("is-4-desktop");
                     document.getElementById("spritebossdiv").classList.add("invisibile");
 
+                    Swal.fire({
+                        icon: 'success',
+                        title: 'Congratulazioni!',
+                        text: 'Boss battuto!'
+                    })
                 }, 10000);
             }, 700);
         }
@@ -1325,6 +1353,12 @@ function winorloseboss(x, elem) {
         document.getElementById("spritebossdiv").classList.remove("is-half-mobile");
         document.getElementById("spritebossdiv").classList.remove("is-4-desktop");
         document.getElementById("spritebossdiv").classList.add("invisibile");
+        
+        clearInterval(goanim);
+        clearInterval(stopanim);
+        document.getElementById("spriteboss").classList.remove("anim");
+        goanim = 0;
+        stopanim = 0;
 
         return;
     }
@@ -1357,6 +1391,12 @@ function winorlosetorre(x, elem) {
         }
 
         if (counterp == counterpmax) {
+
+            clearInterval(goanim);
+            clearInterval(stopanim);
+            document.getElementById("spriteboss").classList.remove("anim");
+            goanim = 0;
+            stopanim = 0;
 
             setTimeout(function () {
                 document.getElementById("back").classList.add("invisibile");
@@ -1406,6 +1446,12 @@ function winorlosetorre(x, elem) {
                     document.getElementById("spritebossdiv").classList.add("invisibile");
 
                     document.getElementById("lvl").innerHTML = "";
+
+                    Swal.fire({
+                        icon: 'success',
+                        title: 'Congratulazioni!',
+                        text: 'Ora sei un English Master!'
+                    })
 
                 }, 10000);
             }, 700);
@@ -1471,6 +1517,12 @@ function winorlosetorre(x, elem) {
 
         document.getElementById("lvl").innerHTML = "";
 
+        clearInterval(goanim);
+        clearInterval(stopanim);
+        document.getElementById("spriteboss").classList.remove("anim");
+        goanim = 0;
+        stopanim = 0;
+
         return;
     }
 
@@ -1496,4 +1548,21 @@ function changespritepg() {
 
     document.getElementById("sprite").src = sprite_selezionato;
     document.getElementById("vic").src = vittoria_selezionata;
+}
+
+function successdownload() {
+    Swal.fire({
+        icon: 'success',
+        title: 'La guida è stata scaricata correttamente',
+        showConfirmButton: false,
+        timer: 1500
+    })
+}
+
+function starta(){
+    document.getElementById("spriteboss").classList.add("anim");
+}
+
+function stopa(){
+    document.getElementById("spriteboss").classList.remove("anim");
 }
