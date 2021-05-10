@@ -1280,7 +1280,26 @@ function winorloseboss(x, elem) {
     } else {
 
         document.getElementById(elem).classList.add("is-danger");
-        alert("Hai perso!");
+        let rand = Math.floor(Math.random() * 3);
+        if (rand == 1) {
+            Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                text: 'Non ti abbattere!',
+            })
+        } else if (rand == 2) {
+            Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                text: 'Anche i migliori sbagliano!',
+            })
+        } else {
+            Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                text: 'Si impara sbagliando!',
+            })
+        }
 
         document.getElementById("benvenuto").classList.remove("invisibile");
         document.getElementById("allenatioboss").classList.remove("invisibile");
@@ -1395,7 +1414,26 @@ function winorlosetorre(x, elem) {
     } else {
 
         document.getElementById(elem).classList.add("is-danger");
-        alert("Hai perso!");
+        let rand = Math.floor(Math.random() * 3);
+        if (rand == 1) {
+            Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                text: 'Non ti abbattere!',
+            })
+        } else if (rand == 2) {
+            Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                text: 'Anche i migliori sbagliano!',
+            })
+        } else {
+            Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                text: 'Si impara sbagliando!',
+            })
+        }
 
         document.getElementById("benvenuto").classList.remove("invisibile");
         document.getElementById("allenatioboss").classList.remove("invisibile");
