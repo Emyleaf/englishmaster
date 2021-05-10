@@ -419,7 +419,7 @@ function gioco(categoria, bossornot) {
         document.getElementById("spritebossdiv").classList.add("is-4-desktop");
         document.getElementById("points").classList.add("invisibile");
         document.getElementById("spritebossdiv").classList.remove("invisibile");
-        
+
         goanim = setInterval(starta, 4000);
         stopanim = setInterval(stopa, 8000);
     }
@@ -1253,7 +1253,7 @@ function winorloseboss(x, elem) {
         }
 
         if (counterp == counterpmax) {
-            
+
             clearInterval(goanim);
             clearInterval(stopanim);
             document.getElementById("spriteboss").classList.remove("anim");
@@ -1268,7 +1268,7 @@ function winorloseboss(x, elem) {
                 document.getElementById("scenarioallenamento").classList.add("invisibile");
                 document.getElementById("spritediv").classList.add("invisibile");
                 document.getElementById("spritebossdiv").classList.add("invisibile");
-     
+
             }, 700);
 
             setTimeout(function () {
@@ -1298,7 +1298,7 @@ function winorloseboss(x, elem) {
 
                     Swal.fire({
                         icon: 'success',
-                        title: 'Congratulazioni!',
+                        title: 'Well played!',
                         text: 'Boss battuto!'
                     })
                 }, 10000);
@@ -1353,7 +1353,7 @@ function winorloseboss(x, elem) {
         document.getElementById("spritebossdiv").classList.remove("is-half-mobile");
         document.getElementById("spritebossdiv").classList.remove("is-4-desktop");
         document.getElementById("spritebossdiv").classList.add("invisibile");
-        
+
         clearInterval(goanim);
         clearInterval(stopanim);
         document.getElementById("spriteboss").classList.remove("anim");
@@ -1449,7 +1449,7 @@ function winorlosetorre(x, elem) {
 
                     Swal.fire({
                         icon: 'success',
-                        title: 'Congratulazioni!',
+                        title: 'Well played!',
                         text: 'Ora sei un English Master!'
                     })
 
@@ -1559,10 +1559,10 @@ function successdownload() {
     })
 }
 
-function starta(){
+function starta() {
     document.getElementById("spriteboss").classList.add("anim");
 }
 
-function stopa(){
+function stopa() {
     document.getElementById("spriteboss").classList.remove("anim");
 }
