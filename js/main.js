@@ -1,3 +1,13 @@
+if ("serviceWorker" in navigator) {
+    navigator.serviceWorker.register("sw.js").then(registration => {
+        console.log("SW Registered!");
+        console.log(registration);
+    }).catch(error => {
+        console.log("SW Registration Failed!");
+        console.log(error);
+    })
+}
+
 const parole = ["Agnello", "Alligatore", "Anatra", "Aquila", "Aragosta", "Asino", "Balena", "Cane", "Capra", "Cavallo", "Cervo", "Cinghiale", "Coccodrillo",
     "Coniglio", "Corvo", "Criceto", "Delfino", "Elefante", "Falco", "Gabbiano", "Gatto", "Gattino", "Gazzella", "Ghepardo", "Giraffa", "Granchio", "Gufo", "Ippopotamo",
     "Leone", "Lucertola", "Lupo", "Maiale", "Mucca", "Medusa", "Oca", "Orso", "Pantera", "Pappagallo", "Pecora", "Pesce", "Piccione", "Pitone", "Pollo", "Rana",
