@@ -232,6 +232,9 @@ let vittoria_selezionata = vittoria_robin;
 let timer1 = document.querySelector("#timer1");
 let timer2 = document.querySelector("#timer2");
 let timer3 = document.querySelector("#timer3");
+let timer4 = document.querySelector("#timer05");
+let timer5 = document.querySelector("#timer15");
+let timer6 = document.querySelector("#timer25");
 
 let goanim;
 let stopanim;
@@ -339,18 +342,16 @@ let time_left = 1;
 let timerefresh;
 let point_time = 0;
 
-timer1.addEventListener('click', () => {
-    timerefresh = setInterval(countDown, 1000);
-});
+timer1.addEventListener('click', startTime);
+timer2.addEventListener('click', startTime);
+timer3.addEventListener('click', startTime);
+timer4.addEventListener('click', startTime);
+timer5.addEventListener('click', startTime);
+timer6.addEventListener('click', startTime);
 
-timer2.addEventListener('click', () => {
+function startTime() {
     timerefresh = setInterval(countDown, 1000);
-});
-
-timer3.addEventListener('click', () => {
-    timerefresh = setInterval(countDown, 1000);
-});
-
+}
 
 function countDown() {
 
@@ -361,7 +362,6 @@ function countDown() {
         hide_presentazione(3);
     } else {
         document.getElementById("timer").innerHTML = time_left;
-        console.log(point_time);
         time_left -= 1;
     }
 }
@@ -424,7 +424,7 @@ function gioco(categoria, bossornot) {
         fine_categoria = 639;
     }
 
-    if (categoria == "1min" || categoria == "2min" || categoria == "3min") {
+    if (categoria == "1min" || categoria == "2min" || categoria == "3min" || categoria == "05min" || categoria == "15min" || categoria == "25min") {
         inizio_categoria = 0;
         fine_categoria = 639;
 
@@ -438,6 +438,12 @@ function gioco(categoria, bossornot) {
             time_left = 120;
         } else if (categoria == "3min") {
             time_left = 180;
+        } else if (categoria == "05min") {
+            time_left = 30;
+        } else if (categoria == "15min") {
+            time_left = 90;
+        } else if (categoria == "25min") {
+            time_left = 150;
         }
     }
 
