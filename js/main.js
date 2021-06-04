@@ -229,6 +229,10 @@ let vittoria_tiki = "./mp4/victory_tiki.mp4";
 let vittoria_roy = "./mp4/victory_roy.mp4";
 let vittoria_selezionata = vittoria_robin;
 
+let timer1 = document.querySelector("#timer1");
+let timer2 = document.querySelector("#timer2");
+let timer3 = document.querySelector("#timer3");
+
 let goanim;
 let stopanim;
 //console.log(traduzione[426]);
@@ -253,6 +257,10 @@ function hide_presentazione(alloppureboss) {
         z.classList.remove("invisibile");
         zp.classList.remove("invisibile");
         back.classList.remove("invisibile");
+    } else if (alloppureboss == 5) {
+        document.getElementById("sceltatempop").classList.remove("invisibile");
+        document.getElementById("sceltatempo").classList.remove("invisibile");
+        back.classList.remove("invisibile");
     } else if (alloppureboss == 2) {
         k.classList.remove("invisibile");
         kp.classList.remove("invisibile");
@@ -274,6 +282,9 @@ function hide_presentazione(alloppureboss) {
 
         x.classList.remove("invisibile");
         y.classList.remove("invisibile");
+
+        document.getElementById("sceltatempop").classList.add("invisibile");
+        document.getElementById("sceltatempo").classList.add("invisibile");
 
         document.getElementById("downloadbtn").classList.remove("invisibile");
         document.getElementById("changepg").classList.remove("invisibile");
@@ -302,15 +313,57 @@ function hide_presentazione(alloppureboss) {
 
         document.getElementById("lvl").innerHTML = "";
 
+        document.getElementById("timerdiv").classList.add("invisibile");
+
         clearInterval(goanim);
         clearInterval(stopanim);
+        clearInterval(timerefresh);
         document.getElementById("spriteboss").classList.remove("anim");
         goanim = 0;
         stopanim = 0;
+
+        document.getElementById("timer").innerHTML = "START!";
+        point_time = 0;
     }
 
     document.body.scrollTop = 0;
     document.documentElement.scrollTop = 0;
+}
+
+/*timer1.addEventListener('click', countDown(60));
+timer2.addEventListener('click', countDown(120));
+timer3.addEventListener('click', countDown(180));
+*/
+
+let time_left = 1;
+let timerefresh;
+let point_time = 0;
+
+timer1.addEventListener('click', () => {
+    timerefresh = setInterval(countDown, 1000);
+});
+
+timer2.addEventListener('click', () => {
+    timerefresh = setInterval(countDown, 1000);
+});
+
+timer3.addEventListener('click', () => {
+    timerefresh = setInterval(countDown, 1000);
+});
+
+
+function countDown() {
+
+    if (time_left <= 0) {
+        clearInterval(timerefresh);
+        document.getElementById("timer").innerHTML = "START!";
+        timegamepoints();
+        hide_presentazione(3);
+    } else {
+        document.getElementById("timer").innerHTML = time_left;
+        console.log(point_time);
+        time_left -= 1;
+    }
 }
 
 function gioco(categoria, bossornot) {
@@ -371,6 +424,23 @@ function gioco(categoria, bossornot) {
         fine_categoria = 639;
     }
 
+    if (categoria == "1min" || categoria == "2min" || categoria == "3min") {
+        inizio_categoria = 0;
+        fine_categoria = 639;
+
+        document.getElementById("timerdiv").classList.remove("invisibile");
+
+        point_time = 0;
+
+        if (categoria == "1min") {
+            time_left = 60;
+        } else if (categoria == "2min") {
+            time_left = 120;
+        } else if (categoria == "3min") {
+            time_left = 180;
+        }
+    }
+
     categoria_scelta = categoria;
 
     document.getElementById("scenarioallenamento").classList.remove("invisibile");
@@ -378,6 +448,8 @@ function gioco(categoria, bossornot) {
     document.getElementById("allenamentip").classList.add("invisibile");
     document.getElementById("iboss").classList.add("invisibile");
     document.getElementById("ibossp").classList.add("invisibile");
+    document.getElementById("sceltatempo").classList.add("invisibile");
+    document.getElementById("sceltatempop").classList.add("invisibile");
 
     if (bossornot == 0) {
         giocoinloop();
@@ -437,6 +509,7 @@ function gioco(categoria, bossornot) {
     document.body.scrollTop = 0;
     document.documentElement.scrollTop = 0;
 }
+
 
 function giocoinloop() {
 
@@ -1225,6 +1298,7 @@ function winorlose(x, elem) {
     if (x == 1) {
         audio.play();
         document.getElementById(elem).classList.add("is-success");
+        point_time += 1;
         if (sprite_selezionato == sprite_robin) {
             document.getElementById("sprite").src = "./img/robin_sprite2.png";
         } else if (sprite_selezionato == sprite_takumi) {
@@ -1567,6 +1641,16 @@ function successdownload() {
         showConfirmButton: false,
         timer: 1500
     })
+}
+
+function timegamepoints() {
+    Swal.fire({
+        icon: 'success',
+        title: 'Bravo! Punti: ' + point_time,
+        showConfirmButton: true,
+    })
+
+    document.getElementById("timer").innerHTML = "START!";
 }
 
 function starta() {

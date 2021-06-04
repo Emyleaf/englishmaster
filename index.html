@@ -35,7 +35,7 @@
             <button class="button is-info is-rounded" onclick="hide_presentazione(1)">Allenati</button>
             <button class="button is-danger is-rounded" onclick="hide_presentazione(2)">Sfida i boss</button>
             <button class="button is-success is-rounded" onclick="hide_presentazione(4)">Avventura</button>
-            <!-- <button class="button is-dark is-rounded" onclick="hide_presentazione(5)">Lotta a tempo</button> -->
+            <button class="button is-dark is-rounded" onclick="hide_presentazione(5)">A tempo</button>
         </div>
 
         <h3 id="allenamentip" class="title has-text-centered invisibile"> In cosa vuoi allenarti?</h3><br>
@@ -60,6 +60,13 @@
             <button class="button is-warning is-rounded" onclick="gioco('directions', 0)">Directions ↗↘</button>
         </div>
 
+        <h3 id="sceltatempop" class="title has-text-centered invisibile"> Scegli un tempo</h3><br>
+        <div id="sceltatempo" class="buttons are-medium is-justify-content-center invisibile">
+            <button id="timer1" class="button is-warning is-rounded" onclick="gioco('1min', 0)">01:00</button>
+            <button id="timer2" class="button is-warning is-rounded" onclick="gioco('2min', 0)">02:00</button>
+            <button id="timer3" class="button is-warning is-rounded" onclick="gioco('3min', 0)">03:00</button>
+        </div>
+
         <div id="probardiv" class="columns is-mobile has-text-centered is-justify-content-center">
             <div id="lvl" class="title"></div>
             <div id="probar" class="column is-4-desktop invisibile">
@@ -79,6 +86,10 @@
             <button class="button is-danger is-info is-rounded" onclick="gioco('difficile', 1)">King Slime</button>
             <button class="button is-danger is-info is-rounded" onclick="gioco('difficile+', 1)">Dragon</button>
             <button class="button is-danger is-info is-rounded" onclick="gioco('impossibile', 1)">Thunder God</button>
+        </div>
+
+        <div id="timerdiv" class="has-text-centered invisibile">
+            <p class="title" id="timer" style="color: red;">START!</p>
         </div>
 
         <div id="scenarioallenamento" class="has-text-centered invisibile">
