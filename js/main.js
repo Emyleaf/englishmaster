@@ -327,6 +327,7 @@ function hide_presentazione(alloppureboss) {
 
         document.getElementById("timer").innerHTML = "START!";
         point_time = 0;
+        time_left = 0;
     }
 
     document.body.scrollTop = 0;
@@ -338,7 +339,7 @@ timer2.addEventListener('click', countDown(120));
 timer3.addEventListener('click', countDown(180));
 */
 
-let time_left = 1;
+let time_left = 0;
 let timerefresh;
 let point_time = 0;
 
@@ -521,12 +522,74 @@ function giocoinloop() {
 
     let sce1 = document.getElementById("scelta1");
     let sce2 = document.getElementById("scelta2");
+    sce1.classList.remove("is-static");
+    sce2.classList.remove("is-static");
 
     document.getElementById("sprite").src = sprite_selezionato;
     sce1.classList.remove("is-success");
     sce2.classList.remove("is-success");
     sce1.classList.remove("is-danger");
     sce2.classList.remove("is-danger");
+
+    if (time_left > 0) {
+        let n_categoria = Math.floor(Math.random() * numero_categorie);
+
+        if (n_categoria == 0) {
+            inizio_categoria = 0;
+            fine_categoria = 57;
+        } else if (n_categoria == 1) {
+            inizio_categoria = 58;
+            fine_categoria = 98;
+        } else if (n_categoria == 2) {
+            inizio_categoria = 99;
+            fine_categoria = 133;
+        } else if (n_categoria == 3) {
+            inizio_categoria = 134;
+            fine_categoria = 165;
+        } else if (n_categoria == 4) {
+            inizio_categoria = 166;
+            fine_categoria = 180;
+        } else if (n_categoria == 5) {
+            inizio_categoria = 181;
+            fine_categoria = 231;
+        } else if (n_categoria == 6) {
+            inizio_categoria = 232;
+            fine_categoria = 250;
+        } else if (n_categoria == 7) {
+            inizio_categoria = 251;
+            fine_categoria = 295;
+        } else if (n_categoria == 8) {
+            inizio_categoria = 296;
+            fine_categoria = 329;
+        } else if (n_categoria == 9) {
+            inizio_categoria = 330;
+            fine_categoria = 368;
+        } else if (n_categoria == 10) {
+            inizio_categoria = 369;
+            fine_categoria = 382;
+        } else if (n_categoria == 11) {
+            inizio_categoria = 383;
+            fine_categoria = 426;
+        } else if (n_categoria == 12) {
+            inizio_categoria = 427;
+            fine_categoria = 451;
+        } else if (n_categoria == 13) {
+            inizio_categoria = 452;
+            fine_categoria = 472;
+        } else if (n_categoria == 14) {
+            inizio_categoria = 473;
+            fine_categoria = 555;
+        } else if (n_categoria == 15) {
+            inizio_categoria = 556;
+            fine_categoria = 592;
+        } else if (n_categoria == 16) {
+            inizio_categoria = 593;
+            fine_categoria = 617;
+        } else if (n_categoria == 17) {
+            inizio_categoria = 618;
+            fine_categoria = 639;
+        }
+    }
 
     let n_random = Math.floor(Math.random() * (fine_categoria + 1 - inizio_categoria)) + inizio_categoria;
 
@@ -1301,6 +1364,11 @@ var audiolvl = new Audio('./lvlupmodbassissimo.mp3');
 
 function winorlose(x, elem) {
 
+    let sce1 = document.getElementById("scelta1");
+    let sce2 = document.getElementById("scelta2");
+    sce1.classList.add("is-static");
+    sce2.classList.add("is-static");
+
     if (x == 1) {
         audio.play();
         document.getElementById(elem).classList.add("is-success");
@@ -1316,6 +1384,10 @@ function winorlose(x, elem) {
         }
     } else {
         document.getElementById(elem).classList.add("is-danger");
+        point_time -= 1;
+        if (point_time < 0) {
+            point_time = 0;
+        }
     }
 
     setTimeout(function () {
@@ -1650,11 +1722,24 @@ function successdownload() {
 }
 
 function timegamepoints() {
-    Swal.fire({
-        icon: 'success',
-        title: 'Bravo! Punti: ' + point_time,
-        showConfirmButton: true,
-    })
+
+    if (point_time > 0) {
+
+        Swal.fire({
+            icon: 'success',
+            title: 'Bravoh!',
+            text: 'Punti: ' + point_time,
+            showConfirmButton: true,
+        })
+
+    } else {
+        Swal.fire({
+            icon: 'error',
+            title: 'Non lo sapevi?',
+            text: 'Le risposte errate tolgono punti!',
+            showConfirmButton: true,
+        })
+    }
 
     document.getElementById("timer").innerHTML = "START!";
 }
