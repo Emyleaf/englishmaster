@@ -1,5 +1,8 @@
 @import "https://cdn.jsdelivr.net/npm/bulma@0.9.2/css/bulma.min.css";
 
+html {
+  scroll-behavior: smooth;
+}
 .anim {
   animation: bounce 4s ease-in infinite;
   transform-origin: center bottom;
@@ -31,4 +34,14 @@
   display: block;
   margin-left: auto;
   margin-right: auto;
+}
+#scenarioboss {    
+    background: url("../img/wallpa.png") no-repeat center fixed;
+    background-size: cover;
+}
+#probardiv{
+  margin: 0;
+}
+#points{
+  margin: 0;
 }

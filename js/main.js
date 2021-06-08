@@ -459,6 +459,7 @@ function gioco(categoria, bossornot) {
     document.getElementById("sceltatempop").classList.add("invisibile");
 
     if (bossornot == 0) {
+
         giocoinloop();
     } else if (bossornot == 1) {
         counterp = 0;
@@ -517,6 +518,7 @@ function gioco(categoria, bossornot) {
     document.documentElement.scrollTop = 0;
 }
 
+let backbtn = document.getElementById("back");
 
 function giocoinloop() {
 
@@ -614,6 +616,8 @@ function giocoinloop() {
         sce1.setAttribute("onclick", "winorlose(2, 'scelta1')");
         sce2.setAttribute("onclick", "winorlose(1, 'scelta2')");
     }
+
+    backbtn.scrollIntoView(false);
 }
 
 let counterpmax;
@@ -733,6 +737,8 @@ function giocoinloopboss(cat) {
         sce1.setAttribute("onclick", "winorloseboss(2, 'scelta1')");
         sce2.setAttribute("onclick", "winorloseboss(1, 'scelta2')");
     }
+
+    backbtn.scrollIntoView(false);
 }
 
 let salutemax = 10;
@@ -1357,6 +1363,8 @@ function giocoinlooptorre() {
         sce1.setAttribute("onclick", "winorlosetorre(2, 'scelta1')");
         sce2.setAttribute("onclick", "winorlosetorre(1, 'scelta2')");
     }
+
+    backbtn.scrollIntoView(false);
 }
 
 var audio = new Audio('./lvlup2.0.mp3');
@@ -1438,6 +1446,8 @@ function winorloseboss(x, elem) {
                 document.getElementById("vic").classList.add("centro");
                 document.getElementById("vic").classList.remove("invisibile");
                 document.getElementById("vic").play();
+                document.body.scrollTop = 0;
+                document.documentElement.scrollTop = 0;
 
                 setTimeout(function () {
                     document.getElementById("vic").pause();
@@ -1463,6 +1473,7 @@ function winorloseboss(x, elem) {
                         title: 'Well played!',
                         text: 'Boss battuto!'
                     })
+
                 }, 10000);
             }, 700);
         }
@@ -1521,6 +1532,9 @@ function winorloseboss(x, elem) {
         document.getElementById("spriteboss").classList.remove("anim");
         goanim = 0;
         stopanim = 0;
+
+        document.body.scrollTop = 0;
+        document.documentElement.scrollTop = 0;
 
         return;
     }
@@ -1587,6 +1601,9 @@ function winorlosetorre(x, elem) {
                 document.getElementById("vic").classList.add("centro");
                 document.getElementById("vic").classList.remove("invisibile");
                 document.getElementById("vic").play();
+
+                document.body.scrollTop = 0;
+                document.documentElement.scrollTop = 0;
 
                 setTimeout(function () {
                     document.getElementById("vic").pause();
@@ -1685,6 +1702,8 @@ function winorlosetorre(x, elem) {
         goanim = 0;
         stopanim = 0;
 
+        document.body.scrollTop = 0;
+        document.documentElement.scrollTop = 0;
         return;
     }
 
