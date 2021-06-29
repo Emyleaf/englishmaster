@@ -218,6 +218,7 @@ let categoria_scelta;
 let inizio_categoria;
 let fine_categoria;
 let numero_categorie = 18;
+let vite_avventura = 3;
 let sprite_robin = "./img/robin_sprite.png";
 let sprite_takumi = "./img/takumi_sprite.png";
 let sprite_tiki = "./img/tiki_sprite.png";
@@ -271,6 +272,10 @@ function hide_presentazione(alloppureboss) {
     } else if (alloppureboss == 4) {
         back.classList.remove("invisibile");
         document.getElementById("probar").classList.remove("invisibile");
+        document.getElementById("hearts").classList.remove("invisibile");
+        document.getElementById("hearts").src = "./img/threehearts.png";
+
+        vite_avventura = 3;
         salutemax = 10;
         puntiferita = 0;
         document.getElementById("bar").classList.add("is-success");
@@ -298,6 +303,7 @@ function hide_presentazione(alloppureboss) {
         kp.classList.add("invisibile");
 
         document.getElementById("probar").classList.add("invisibile");
+        document.getElementById("hearts").classList.add("invisibile");
 
         document.getElementById("scenarioallenamento").classList.add("invisibile");
         document.getElementById("points").classList.add("invisibile");
@@ -627,6 +633,8 @@ function giocoinloopboss(cat) {
 
     let sce1 = document.getElementById("scelta1");
     let sce2 = document.getElementById("scelta2");
+    sce1.classList.remove("is-static");
+    sce2.classList.remove("is-static");
 
     if (cat == "facile") {
         document.getElementById("spriteboss").src = "./img/slime.png";
@@ -749,6 +757,8 @@ function giocoinlooptorre() {
     let sce1 = document.getElementById("scelta1");
     let sce2 = document.getElementById("scelta2");
     let barrasalute = document.getElementById("bar");
+    sce1.classList.remove("is-static");
+    sce2.classList.remove("is-static");
 
     if (counterp <= 10) {
         document.getElementById("spriteboss").src = "./img/1porcino.png";
@@ -776,7 +786,7 @@ function giocoinlooptorre() {
             }
         }
 
-        puntiferita++;
+
 
     } else if (counterp <= 20 && counterp >= 11) {
         document.getElementById("spriteboss").src = "./img/2budino.png";
@@ -803,7 +813,7 @@ function giocoinlooptorre() {
             }
         }
 
-        puntiferita++;
+
 
     } else if (counterp <= 30 && counterp >= 21) {
         document.getElementById("spriteboss").src = "./img/3sacco.png";
@@ -832,7 +842,7 @@ function giocoinlooptorre() {
             }
         }
 
-        puntiferita++;
+
 
     } else if (counterp <= 40 && counterp >= 31) {
         document.getElementById("spriteboss").src = "./img/4greendragon.png";
@@ -860,7 +870,7 @@ function giocoinlooptorre() {
             }
         }
 
-        puntiferita++;
+
 
     } else if (counterp <= 60 && counterp >= 41) {
         document.getElementById("spriteboss").src = "./img/5knightslime.png";
@@ -888,7 +898,7 @@ function giocoinlooptorre() {
             }
         }
 
-        puntiferita++;
+
 
     } else if (counterp <= 80 && counterp >= 61) {
         document.getElementById("spriteboss").src = "./img/6cinghorco.png";
@@ -916,7 +926,7 @@ function giocoinlooptorre() {
             }
         }
 
-        puntiferita++;
+
 
     } else if (counterp <= 100 && counterp >= 81) {
         document.getElementById("spriteboss").src = "./img/7skeled.png";
@@ -944,7 +954,7 @@ function giocoinlooptorre() {
             }
         }
 
-        puntiferita++;
+
 
     } else if (counterp <= 125 && counterp >= 101) {
         document.getElementById("spriteboss").src = "./img/8grif.png";
@@ -972,7 +982,7 @@ function giocoinlooptorre() {
             }
         }
 
-        puntiferita++;
+
 
     } else if (counterp <= 150 && counterp >= 126) {
         document.getElementById("spriteboss").src = "./img/9dragslime.png";
@@ -1000,7 +1010,7 @@ function giocoinlooptorre() {
             }
         }
 
-        puntiferita++;
+
 
     } else if (counterp <= 175 && counterp >= 151) {
         document.getElementById("spriteboss").src = "./img/10golemoro.png";
@@ -1028,7 +1038,7 @@ function giocoinlooptorre() {
             }
         }
 
-        puntiferita++;
+
 
     } else if (counterp <= 205 && counterp >= 176) {
         document.getElementById("spriteboss").src = "./img/11slot.png";
@@ -1056,7 +1066,7 @@ function giocoinlooptorre() {
             }
         }
 
-        puntiferita++;
+
 
     } else if (counterp <= 235 && counterp >= 206) {
         document.getElementById("spriteboss").src = "./img/12cicloperosa.png";
@@ -1084,7 +1094,7 @@ function giocoinlooptorre() {
             }
         }
 
-        puntiferita++;
+
 
     } else if (counterp <= 265 && counterp >= 236) {
         document.getElementById("spriteboss").src = "./img/13gyld.png";
@@ -1112,7 +1122,7 @@ function giocoinlooptorre() {
             }
         }
 
-        puntiferita++;
+
 
     } else if (counterp <= 300 && counterp >= 266) {
         document.getElementById("spriteboss").src = "./img/14ironmaid.png";
@@ -1140,7 +1150,7 @@ function giocoinlooptorre() {
             }
         }
 
-        puntiferita++;
+
 
     } else if (counterp <= 335 && counterp >= 301) {
         document.getElementById("spriteboss").src = "./img/15goldrago.png";
@@ -1168,7 +1178,7 @@ function giocoinlooptorre() {
             }
         }
 
-        puntiferita++;
+
 
     } else if (counterp <= 370 && counterp >= 336) {
         document.getElementById("spriteboss").src = "./img/16firegod.png";
@@ -1196,7 +1206,7 @@ function giocoinlooptorre() {
             }
         }
 
-        puntiferita++;
+
 
     } else if (counterp <= 410 && counterp >= 371) {
         document.getElementById("spriteboss").src = "./img/17sandgod.png";
@@ -1224,7 +1234,7 @@ function giocoinlooptorre() {
             }
         }
 
-        puntiferita++;
+
 
     } else if (counterp <= 455 && counterp >= 411) {
         document.getElementById("spriteboss").src = "./img/18bossfinale.png";
@@ -1252,7 +1262,7 @@ function giocoinlooptorre() {
             }
         }
 
-        puntiferita++;
+
 
     } else if (counterp <= 500 && counterp >= 456) {
         document.getElementById("spriteboss").src = "./img/19bossfinale2.png";
@@ -1268,7 +1278,7 @@ function giocoinlooptorre() {
             document.getElementById("bar").classList.remove("is-warning");
         }
 
-        puntiferita++;
+
 
         if (counterp == 500) {
             document.getElementById("lvl").innerHTML = "Lv. 20";
@@ -1404,6 +1414,11 @@ function winorlose(x, elem) {
 }
 
 function winorloseboss(x, elem) {
+
+    let sce1 = document.getElementById("scelta1");
+    let sce2 = document.getElementById("scelta2");
+    sce1.classList.add("is-static");
+    sce2.classList.add("is-static");
 
     if (x == 1) {
         audio.play();
@@ -1546,6 +1561,11 @@ function winorloseboss(x, elem) {
 
 function winorlosetorre(x, elem) {
 
+    let sce1 = document.getElementById("scelta1");
+    let sce2 = document.getElementById("scelta2");
+    sce1.classList.add("is-static");
+    sce2.classList.add("is-static");
+
     if (x == 1) {
         counterp++;
         if (counterp == 10 || counterp == 20 || counterp == 30 || counterp == 40 || counterp == 60 || counterp == 80 || counterp == 100 || counterp == 125 || counterp == 150 || counterp == 175 || counterp == 205 || counterp == 235 || counterp == 265 || counterp == 300 || counterp == 335 || counterp == 370 || counterp == 410 || counterp == 455 || counterp == 500) {
@@ -1553,6 +1573,8 @@ function winorlosetorre(x, elem) {
         } else {
             audio.play();
         }
+
+        puntiferita++;
 
         document.getElementById(elem).classList.add("is-success");
 
@@ -1584,6 +1606,7 @@ function winorlosetorre(x, elem) {
                 document.getElementById("spritebossdiv").classList.add("invisibile");
 
                 document.getElementById("probar").classList.add("invisibile");
+                document.getElementById("hearts").classList.add("invisibile");
 
                 salutemax = 10;
                 puntiferita = 0;
@@ -1634,6 +1657,18 @@ function winorlosetorre(x, elem) {
 
                 }, 10000);
             }, 700);
+        }
+
+    } else if (x == 2 && vite_avventura > 1) {
+
+        document.getElementById(elem).classList.add("is-danger");
+
+        if (vite_avventura == 3) {
+            vite_avventura -= 1;
+            document.getElementById("hearts").src = "./img/twohearts.png";
+        } else if (vite_avventura == 2) {
+            vite_avventura -= 1;
+            document.getElementById("hearts").src = "./img/onehearts.png";
         }
 
     } else {
@@ -1687,6 +1722,7 @@ function winorlosetorre(x, elem) {
         document.getElementById("spritebossdiv").classList.add("invisibile");
 
         document.getElementById("probar").classList.add("invisibile");
+        document.getElementById("hearts").classList.add("invisibile");
         salutemax = 10;
         puntiferita = 0;
 
