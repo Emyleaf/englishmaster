@@ -2,7 +2,7 @@ self.addEventListener("install", e => {
     e.waitUntil(
         caches.open("static").then(cache => {
             return cache.addAll([
-                "./",
+                //"./",
                 "./img/1porcino.png",
                 "./img/2budino.png",
                 "./img/3sacco.png",
@@ -42,8 +42,8 @@ self.addEventListener("install", e => {
                 "./img/tiki_sprite2.png",
                 "./img/wallpa.png",
 
-                "./css/style.css",
-                "./js/main.js",
+                //"./css/style.css",
+                //"./js/main.js",
 
                 "./mp4/victory_lin.mp4",
                 "./mp4/victory_lucina.mp4",
