@@ -41,6 +41,9 @@ self.addEventListener("install", e => {
                 "./img/tiki_sprite.png",
                 "./img/tiki_sprite2.png",
                 "./img/wallpa.png",
+                "./img/onehearts.png",
+                "./img/twohearts.png",
+                "./img/threehearts.png",
 
                 //"./css/style.css",
                 //"./js/main.js",

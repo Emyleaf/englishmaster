@@ -8,6 +8,14 @@ if ("serviceWorker" in navigator) {
     })
 }
 
+window.onload = function () {
+
+    setTimeout(function () {
+        document.getElementById("content").classList.remove('invisibile');
+        document.getElementById("loadercircle").remove();
+    }, 1000);
+};
+
 const parole = ["Agnello", "Alligatore", "Anatra", "Aquila", "Aragosta", "Asino", "Balena", "Cane", "Capra", "Cavallo", "Cervo", "Cinghiale", "Coccodrillo",
     "Coniglio", "Corvo", "Criceto", "Delfino", "Elefante", "Falco", "Gabbiano", "Gatto", "Gattino", "Gazzella", "Ghepardo", "Giraffa", "Granchio", "Gufo", "Ippopotamo",
     "Leone", "Lucertola", "Lupo", "Maiale", "Mucca", "Medusa", "Oca", "Orso", "Pantera", "Pappagallo", "Pecora", "Pesce", "Piccione", "Pitone", "Pollo", "Rana",
